@@ -35,7 +35,7 @@ const AvatarSection = () => (
         {/* Circular Avatar */}
         <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-500 shadow-xl mb-6">
             <img 
-                src="/public/profilepic2.jpg" 
+                src="/profilepic2.jpg" 
                 alt="Profile Avatar" 
                 className="w-full h-full object-cover" 
             />
