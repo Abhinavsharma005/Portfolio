@@ -25,7 +25,7 @@ const projectsData = [
     {
         id: 3,
         category: "Web",
-        title: "PokeDeck",
+        title: "PokeDeck(Finds Pokemon Data by Search and Filters)",
         description: "A modern, responsive web application that shows Pokémon details on a 3D cards that can flip on tap to reveal more information powered by Pokeapi.",
         thumbnailUrl: "/pokedeck thumbnail.png",
         techTags: ["HTML", "CSS", "JavaScript", "PokeApi"],
