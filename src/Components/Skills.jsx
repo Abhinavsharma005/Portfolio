@@ -17,7 +17,7 @@ const Skills = () => {
       iconColor: "#61DAFB",
       skills: [
         { name: "HTML", color: "#E34F26" },
-        { name: "CSS", color: "#1572B6" },
+        { name: "CSS", color: "#3b9dd7" },
         { name: "JavaScript", color: "#F6F579" },
         { name: "Soon..TypeScript", color: "#3178C6" },
         { name: "C++", color: "#00599C" },
@@ -58,7 +58,7 @@ const Skills = () => {
         { name: "VS Code", color: "#007ACC" },
         { name: "Postman", color: "#FF6C37" },
         { name: "Vercel", color: "#9365DB" },
-        { name: "Figma", color: "#ff3737" },
+        { name: "Figma", color: "#04c97e" },
       ],
     },
     {
