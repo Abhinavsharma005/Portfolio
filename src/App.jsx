@@ -79,7 +79,7 @@ function App() {
         alt="Logo"
         className="w-9 h-9 mr-2" 
     />
-          <span>Abhinav</span></div>
+          <span>Abhinav Sharma</span></div>
         <div className="flex justify-end">
           <nav className="space-x-4 p-3 text-lg">
             <NavLink href="#home-section" targetId="home-section" currentActive={activeSection}>Home</NavLink>
