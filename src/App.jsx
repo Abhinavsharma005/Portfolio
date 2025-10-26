@@ -103,7 +103,7 @@ function App() {
                 </h1>
                 <RotatingSkills/>
                 <p className='text-2xl text-[#94A3B8] max-w-3xl mx-auto mt-12'>Building scalable applications and intelligent systems that inspire and empower.</p>
-                <div className='flex justify-center mt-10 gap-4'>
+                <div className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-4 w-full px-4'>
                   <a href="">
                     <button className='button1'><MdOutlineFileDownload /> Download Resume</button>
                   </a>
