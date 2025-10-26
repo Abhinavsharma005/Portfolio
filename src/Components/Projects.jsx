@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCodeBranch, FaExternalLinkAlt, FaVideo } from 'react-icons/fa'; // Include FaVideo
+import { FaCodeBranch, FaExternalLinkAlt, FaVideo, FaChevronDown, FaChevronUp } from 'react-icons/fa'; 
 
 const projectsData = [
     {
@@ -15,13 +15,14 @@ const projectsData = [
     {
         id: 2,
         category: "Web",
-        title: "Myntra Clone",
-        description: "A simple clone of Myntra website using HTML, CSS & JS.",
-        thumbnailUrl: "/myntra thumbnail.png",
-        techTags: ["HTML", "CSS", "JavaScript"],
-        liveDemo: "https://abhinavsharma005.github.io/Myntra-Clone-Website/",
-        githubRepo: "https://github.com/Abhinavsharma005/Myntra-Clone-Website",
+        title: "Spotify Desktop Clone",
+        description: "A clean, stylish and functional Spotify Desktop Clone built using react js and tailwindcss — search tracks via the Spotify Web API, play songs, control playback, and save liked songs.",
+        thumbnailUrl: "/spotify.png",
+        techTags: ["React.js", "TailwindCSS", "Spotify API"],
+        liveDemo: "https://spotify-clone-vert-chi.vercel.app/",
+        githubRepo: "https://github.com/Abhinavsharma005/Spotify-Clone",
     },
+   
     {
         id: 3,
         category: "Web",
@@ -49,7 +50,7 @@ const projectsData = [
         description: "A simple and modern task management app built with Flutter, powered by Firebase Authentication and Firestore. Users can sign up/login, complete their onboarding profile, create tasks, and track completed ones — all with a clean UI and real-time updates.",
         thumbnailUrl: "/todo thumbnail.png",
         techTags: ["Dart", "Firebase", "Cloudinary"],
-        liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutterproject-flutter-dart-activity-7367396575028858881-_ZLY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
+        liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutterproject-flutter-dart-activity-7367396575028858881-_ZLY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7EnKmfl6koU",
         githubRepo: "https://github.com/Abhinavsharma005/To_do_app_flutter",
     },
     {
@@ -62,6 +63,17 @@ const projectsData = [
         liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutter-dart-movieapp-activity-7366051340466167809-DqmY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
         githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
     },
+     {
+        id: 7,
+        category: "Web",
+        title: "Myntra Clone",
+        description: "A simple clone of Myntra website using HTML, CSS & JS.",
+        thumbnailUrl: "/myntra thumbnail.png",
+        techTags: ["HTML", "CSS", "JavaScript"],
+        liveDemo: "https://abhinavsharma005.github.io/Myntra-Clone-Website/",
+        githubRepo: "https://github.com/Abhinavsharma005/Myntra-Clone-Website",
+    },
+    
 ];
 
 const categories = ["All", "Web", "Full-Stack", "AI/ML", "App Dev"];
@@ -132,14 +144,34 @@ const ProjectCard = ({ project }) => {
     );
 };
 
-
-
 const Projects = () => {
+    const PROJECT_LIMIT = 6;
     const [activeCategory, setActiveCategory] = useState("All");
+    const [showAll, setShowAll] = useState(false); // State for 'View More/Less'
 
+    // Filter projects based on the active category
     const filteredProjects = activeCategory === "All"
         ? projectsData
         : projectsData.filter(p => p.category === activeCategory);
+
+    // Conditionally slice the projects for display
+    const projectsToDisplay = (activeCategory === "All" && !showAll)
+        ? filteredProjects.slice(0, PROJECT_LIMIT)
+        : filteredProjects;
+    
+    // Check if the "View More" button is needed
+    const showViewMoreButton = activeCategory === "All" && projectsData.length > PROJECT_LIMIT;
+    const buttonText = showAll ? "View Less" : "View More";
+
+    const handleCategoryChange = (category) => {
+        setActiveCategory(category);
+        
+        if (category === "All") {
+            setShowAll(false); 
+        } else {
+            setShowAll(true);
+        }
+    };
 
     return (
         <div className="py-20 bg-black min-h-screen text-white">
@@ -153,7 +185,7 @@ const Projects = () => {
                     {categories.map(category => (
                         <button
                             key={category}
-                            onClick={() => setActiveCategory(category)}
+                            onClick={() => handleCategoryChange(category)}
                             className={`
                                 px-6 py-2 rounded-full font-medium transition-all duration-300
                                 ${activeCategory === category
@@ -169,11 +201,35 @@ const Projects = () => {
 
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {filteredProjects.map(project => (
+                    {projectsToDisplay.map(project => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </div>
 
+                {/* View More/View Less Button only for 'All' tab */}
+                {showViewMoreButton && (
+                    <div className="flex flex-col items-center justify-center mt-10">
+                        {showAll && (
+                            <FaChevronUp 
+                                className="text-[#54c8fe] text-lg mb-2 animate-bounce transition duration-300" 
+                            />
+                        )}
+
+                        <button
+                            onClick={() => setShowAll(!showAll)}
+                            className="flex items-center text-sm font-semibold text-white bg-[#0f121a] px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:text-[#54c8fe] hover:shadow-lg hover:bg-[#1F2937]"
+                        >
+                            {buttonText}
+                        </button>
+
+                        {!showAll && (
+                            <FaChevronDown 
+                                className="text-[#54c8fe] text-lg mt-2 animate-bounce transition duration-300" 
+                            />
+                        )}
+                    </div>
+                )}
+                
                 {/* Fallback for no projects in a category */}
                 {filteredProjects.length === 0 && (
                     <p className="text-center text-xl text-[#94A3B8] mt-10">
