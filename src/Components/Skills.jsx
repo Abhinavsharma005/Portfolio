@@ -40,9 +40,9 @@ const Skills = () => {
       title: "Backend & Database",
       iconColor: "#FF69B4", 
       skills: [
-        { name: "Soon..Node.js", color: "#22C55E" },
+        { name: "Soon..Node.js", color: "#7fc728" },
         { name: "Soon..Express.js", color: "#999999" },
-        { name: "Soon..MongoDB", color: "#4EA94B" },
+        { name: "Soon..MongoDB", color: "#50b33f" },
         { name: "Soon..PostgreSQL", color: "#336791" },
         { name: "Firebase", color: "#FFA000" },
       ],
