@@ -12,7 +12,7 @@ const Footer = ({ creatorName = "Abhinav Sharma", currentYear = 2025 }) => {
         
         {/* Left Content */}
         <p className="flex justify-center items-center sm:justify-start gap-1 text-sm font-light text-gray-300">
-          Made with passion <FaHeart /> and a lot of ☕
+          Built with passion ,<FaHeart className='mt-1' /> and a lot of ☕
         </p>
 
         {/* Center Content */}
