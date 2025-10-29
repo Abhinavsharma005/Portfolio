@@ -13,15 +13,15 @@ const About = () => {
       <div className="flex flex-col md:flex-row items-start justify-between gap-8 px-4">
         {/* Left side: Paragraphs */}
         <div className="md:w-1/2 md:mt-7 p-2">
-          <p className="text-left text-2xl text-[#94A3B8]">
+          <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
             I'm <span className="text-cyan-400 font-medium">Abhinav Sharma</span>, an IT undergraduate pursuing a Bachelor of Technology at the University Institute of Technology, RGPV Bhopal. I’m passionate about <span className="text-cyan-400 font-medium">software development</span>, problem-solving, and building <span className="text-cyan-400 font-medium">real-world applications</span> that combine innovation with practical design.
           </p>
           <br />
-          <p className="text-left text-2xl text-[#94A3B8]">
+          <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
             I enjoy working with technologies like Flutter mobile development and web development tools to craft <span className="text-cyan-400 font-medium">smart, scalable, and user-focused solutions</span>. Alongside this, I have a strong interest in Machine Learning and Data Science, exploring areas such as <span className="text-cyan-400 font-medium">data preprocessing, predictive analytics, and model integration</span> to create intelligent and adaptive systems.
           </p>
           <br />
-          <p className="text-left text-2xl text-[#94A3B8]">
+          <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
             Currently, I’m focused on projects that bring together <span className="text-cyan-400 font-medium">usability and performance</span>, while continuously learning new technologies to sharpen both my <span className="text-cyan-400 font-medium">frontend and backend</span> development skills.
           </p>
         </div>
