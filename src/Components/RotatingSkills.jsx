@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 
 const RotatingSkills = () => {
-  const skills = ["Problem Solver", "Frontend Web Developer", "Flutter Developer", "UI/UX Designer","Clean Code"];
+  const skills = ["Problem Solver", "Frontend Web Developer", "Flutter App Developer", "UI/UX Designer","Clean Code"];
   const [displayedSkill, setDisplayedSkill] = useState('');
   const [skillIndex, setSkillIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
