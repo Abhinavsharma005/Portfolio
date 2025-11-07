@@ -40,7 +40,7 @@ const Skills = () => {
       title: "Backend & Database",
       iconColor: "#FF69B4", 
       skills: [
-        { name: "Node.js", color: "#5a8147" },
+        { name: "Node.js", color: "#7fc728" },
         { name: "Soon..Express.js", color: "#999999" },
         { name: "Soon..MongoDB", color: "#50b33f" },
         { name: "Soon..PostgreSQL", color: "#336791" },
