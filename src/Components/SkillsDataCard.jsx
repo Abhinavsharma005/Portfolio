@@ -25,6 +25,12 @@ const skillsData = [
     icon: LuCode
   },
 ];
+// const cardAnimationClasses = [
+//     "animate-card-pop-1",
+//     "animate-card-pop-2",
+//     "animate-card-pop-3",
+//     "animate-card-pop-4",
+// ];
 
 const SkillsDataCard = () => {
   return (
@@ -35,6 +41,7 @@ const SkillsDataCard = () => {
           title={skill.title}
           description={skill.description}
           Icon={skill.icon}
+          // className={cardAnimationClasses[index % cardAnimationClasses.length]}
         />
       ))}
     </div>

@@ -12,6 +12,7 @@ import { FiLinkedin } from "react-icons/fi";
 import ScrollButton from './Components/ScrollButton';
 import ScrollToTop from './Components/ScrollToTop';
 import Footer from './Components/Footer';
+import ParticlesBackground from './Components/ParticlesBackground';
 
 const NavLink = ({ href, targetId, currentActive, children, onClick }) => {
   const isActive = currentActive === targetId;
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <>
+    <ParticlesBackground />
       <ScrollToTop />
 
       {/* Navigation Bar */}
@@ -63,13 +65,13 @@ function App() {
         className="p-4 flex justify-between items-center fixed-navbar z-[1000] w-full"
         style={{ backgroundColor: "rgba(12, 18, 40, 0.5)", backdropFilter: "blur(18px)" }}
       >
-        <div className="flex justify-start text-2xl transition duration-300 transform hover:scale-105 font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600">
+        <div className="flex justify-start text-2xl transition duration-300 transform hover:scale-105 font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600 animate-slide-down-logo">
           <img src="/logo2.png" alt="Logo" className="w-9 h-9 mr-2" />
           <span>Abhinav Sharma</span>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-4  text-lg">
+        <nav className="hidden md:flex space-x-4 animate-slide-down-nav text-lg">
           <NavLink href="#home-section" targetId="home-section" currentActive={activeSection}>Home</NavLink>
           <NavLink href="#about-section" targetId="about-section" currentActive={activeSection}>About</NavLink>
           <NavLink href="#skills-section" targetId="skills-section" currentActive={activeSection}>Skills</NavLink>
@@ -133,16 +135,18 @@ function App() {
             <>
               {/* Home Section */}
               <div id="" className='pt-[58px]'>
-                <h3 id='home-section' className="text-3xl text-[#54c8fe]">Welcome, I'm</h3>
-                <h1 className='text-7xl font-bold mt-7 mb-9'>Abhinav Sharma
+                <h3 id='home-section' className="text-3xl text-[#54c8fe] animate-pop-up-1">Welcome, I'm</h3>
+                <h1 className='text-7xl font-bold mt-7 mb-9 animate-pop-up-2'>Abhinav Sharma
                   <span className='inline-block float-custom'>👋</span>
                 </h1>
-                <RotatingSkills />
-                <p className='text-2xl text-[#94A3B8] max-w-3xl mx-auto mt-12'>
+                <div className='animate-pop-up-3'>
+                    <RotatingSkills />
+                </div>
+                <p className='text-2xl text-[#94A3B8] max-w-3xl mx-auto mt-12 animate-pop-up-4'>
                   Building scalable applications and intelligent systems that inspire and empower.
                 </p>
 
-                <div className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-4 w-full px-4'>
+                <div className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-4 w-full px-4 animate-pop-up-4'>
                   <a href="">
                     <button className='button1'><MdOutlineFileDownload /> Download Resume</button>
                   </a>

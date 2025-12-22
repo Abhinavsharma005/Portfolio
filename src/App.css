@@ -179,6 +179,62 @@
 .bg-blue-jeans {
     background-color: #51A2FF;
 }
+/* component animation part  */
+
+/* --- New Pop-Up Animation --- */
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pop-up-1 {
+  animation: pop-up 0.6s ease-out 0.2s forwards;
+  opacity: 0; /* Start hidden */
+}
+.animate-pop-up-2 {
+  animation: pop-up 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+.animate-pop-up-3 {
+  animation: pop-up 0.6s ease-out 0.6s forwards;
+  opacity: 0;
+}
+.animate-pop-up-4 {
+  animation: pop-up 0.6s ease-out 0.8s forwards;
+  opacity: 0;
+}
+/* ----------------------------- */
+
+/* --- New Navigation Slide-Down Animation --- */
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down-logo {
+  animation: slide-down 0.8s ease-out 0.1s forwards; /* Start immediately */
+  opacity: 0; /* Start hidden */
+}
+
+.animate-slide-down-nav {
+  animation: slide-down 0.8s ease-out 0.3s forwards; /* Slightly delayed */
+  opacity: 0; /* Start hidden */
+}
+/* ------------------------------------------- */
+
+
 
 
 
