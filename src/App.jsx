@@ -150,10 +150,10 @@ function App() {
                   <a href="">
                     <button className='button1'><MdOutlineFileDownload /> Download Resume</button>
                   </a>
-                  <a href="https://github.com/Abhinavsharma005">
+                  <a href="https://github.com/Abhinavsharma005" target="_blank" rel="noopener noreferrer">
                     <button className='button1'><FiGithub />Visit Github</button>
                   </a>
-                  <a href="https://linkedin.com/in/abhinav-sharma-314319327">
+                  <a href="https://linkedin.com/in/abhinav-sharma-314319327" target="_blank" rel="noopener noreferrer">
                     <button className='button1'><FiLinkedin /> Connect on Linkedin</button>
                   </a>
                 </div>
