@@ -4,10 +4,19 @@
   margin: 0 auto;
   text-align: center;
 }
-  body {
-    background-color: #000000; /* Dark background 2 - #121522 */
+body {
+    background-color: #000000; 
     color: white; 
   }
+  /* body {
+  background-color: #000000;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  color: white;
+  min-height: 100vh;
+} */
 
 .typing-cursor {
   font-weight: 100;
