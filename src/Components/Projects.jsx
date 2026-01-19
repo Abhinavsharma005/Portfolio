@@ -16,7 +16,7 @@ const projectsData = [
         id: 2,
         category: "Full-Stack",
         title: "Shorty - URL Shortener",
-        description: "Url Shortner appplication where users create short, clean, shareable links with custom aliases, manage their link history, and securely access everything through authentication.",
+        description: "A Full-Stack web appplication where users create short, clean, shareable links with custom aliases, manage their link history, and securely access everything through authentication.",
         thumbnailUrl: "/Shorty thumbnail.png",
         techTags: ["React.js", "TailwindCSS", "Node.js", "Express.js", "Postgres", "Drizzle ORM"],
         liveDemo: "https://shty.vercel.app/",
