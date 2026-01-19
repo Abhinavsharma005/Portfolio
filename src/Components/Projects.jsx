@@ -14,6 +14,16 @@ const projectsData = [
     },
     {
         id: 2,
+        category: "Full-Stack",
+        title: "Url Shortner -- Shorty",
+        description: "Url Shortner appplication where users create short, clean, shareable links with custom aliases, manage their link history, and securely access everything through authentication.",
+        thumbnailUrl: "/Shorty thumbnail.png",
+        techTags: ["React.js", "TailwindCSS", "Node.js", "Express.js", "Postgres", "Drizzle ORM"],
+        liveDemo: "https://shty.vercel.app/",
+        githubRepo: "https://github.com/Abhinavsharma005/Url-Shortner",
+    },
+    {
+        id: 3,
         category: "Web",
         title: "Spotify Desktop Clone",
         description: "A clean, stylish and functional Spotify Desktop Clone built using react js and tailwindcss — search tracks via the Spotify Web API, play songs, control playback, and save liked songs.",
@@ -24,7 +34,7 @@ const projectsData = [
     },
    
     {
-        id: 3,
+        id: 4,
         category: "Web",
         title: "PokeDeck(Finds Pokemon Data by Search and Filters)",
         description: "A modern, responsive web application that shows Pokémon details on a 3D cards that can flip on tap to reveal more information powered by Pokeapi.",
@@ -34,7 +44,7 @@ const projectsData = [
         githubRepo: "https://github.com/Abhinavsharma005/PokeDeck",
     },
     {
-        id: 4,
+        id: 5,
         category: "App Dev",
         title: "TechNewz (A tech-based news application)",
         description: "TechNewz is a simple Flutter-based news application that fetches the latest technology news using the NewsAPI. The app allows users to stay updated with trending tech stories, read brief summaries, and open the full article via the provided URL.",
@@ -44,7 +54,7 @@ const projectsData = [
         githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
     },
     {
-        id: 5,
+        id: 6,
         category: "App Dev",
         title: "ToDo App",
         description: "A simple and modern task management app built with Flutter, powered by Firebase Authentication and Firestore. Users can sign up/login, complete their onboarding profile, create tasks, and track completed ones — all with a clean UI and real-time updates.",
@@ -54,7 +64,7 @@ const projectsData = [
         githubRepo: "https://github.com/Abhinavsharma005/To_do_app_flutter",
     },
     {
-        id: 6,
+        id: 7,
         category: "App Dev",
         title: "Flutter Movie App",
         description: "Flutter Movie App A simple movie browsing app built with Flutter, powered by the TMDB API. Users can explore trending and popular movies, view details like ratings and overviews, and enjoy a clean, responsive UI with smooth performance.",
@@ -64,7 +74,7 @@ const projectsData = [
         githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
     },
      {
-        id: 7,
+        id: 8,
         category: "Web",
         title: "Myntra Clone",
         description: "A simple clone of Myntra website using HTML, CSS & JS.",
