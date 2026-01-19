@@ -31,6 +31,7 @@ const Skills = () => {
         { name: "React.js", color: "#61DAFB" },
         { name: "wait..Next.js", color: "#e4e4e4" },
         { name: "Tailwind CSS", color: "#06B6D4" },
+        { name: "Redux Toolkit", color: "#7743c1" },
       ],
     },
     {
