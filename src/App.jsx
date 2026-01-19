@@ -167,7 +167,7 @@ function App() {
               <div id="projects-section"><Projects /></div>
               <div id="contact-section"><Contact /></div>
 
-              <Footer creatorName="Abhinav Sharma" currentYear={2025} />
+              <Footer creatorName="Abhinav Sharma" currentYear={2026} />
             </>
           } />
 
