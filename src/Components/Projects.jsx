@@ -15,7 +15,7 @@ const projectsData = [
     {
         id: 2,
         category: "Full-Stack",
-        title: "Url Shortner -- Shorty",
+        title: "Shorty - URL Shortener",
         description: "Url Shortner appplication where users create short, clean, shareable links with custom aliases, manage their link history, and securely access everything through authentication.",
         thumbnailUrl: "/Shorty thumbnail.png",
         techTags: ["React.js", "TailwindCSS", "Node.js", "Express.js", "Postgres", "Drizzle ORM"],
