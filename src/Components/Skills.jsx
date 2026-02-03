@@ -153,6 +153,7 @@ const Skills = () => {
             key={data.title}
             variants={itemVariants}
             className="flex flex-col h-full"
+            layout="position"
           >
             <SkillCard
               icon={data.icon}
