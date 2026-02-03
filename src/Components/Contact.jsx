@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { FaEnvelope, FaMapMarkerAlt, FaClock, FaLink, FaPaperPlane } from 'react-icons/fa';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';

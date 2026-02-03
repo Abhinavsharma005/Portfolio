@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { FaCodeBranch, FaExternalLinkAlt, FaVideo, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
