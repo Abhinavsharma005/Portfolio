@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { FaCodeBranch, FaExternalLinkAlt, FaVideo, FaChevronDown, FaChevronUp } from 'react-icons/fa'; 
 
 const projectsData = [
-    {
+     {
         id: 1,
-        category: "App Dev",
-        title: "Chat App(Flutter based application)",
-        description: "ChatApp is a Flutter-based real-time messenger with Firebase authentication and sync, supporting text, images, videos, GIFs, stickers, and emojis. Easily connect new users via phone number or search existing users by name.",
-        thumbnailUrl: "/chatapp thumbnail.png",
-        techTags: ["Dart", "Firebase", "Cloudinary"],
-        liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutterproject-flutter-dart-activity-7369771020095864833-OPVR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
-        githubRepo: "https://github.com/Abhinavsharma005/Chat-App",
+        category: "Full-Stack",
+        title: "EduStream - Live Teaching Platform",
+        description: "EduStream is a role-based live teaching platform inspired by Twitch and YouTube Live, but optimized for education. It enables teachers to broadcast classes while students interact via real-time chat, live polls, and interactive quizzes.",
+        thumbnailUrl: "/edustream.png",
+        techTags: ["Next.js","Typescript","TailwindCSS","MongoDB","Redis","Livekit-WebRTC", "Socket.IO","Framer Motion","Cloudinary"],
+        liveDemo: "https://edustream-syxz.onrender.com/",
+        githubRepo: "https://github.com/Abhinavsharma005/EduStream",
     },
-    {
+     {
         id: 2,
         category: "Full-Stack",
         title: "Shorty - URL Shortener",
@@ -24,6 +24,17 @@ const projectsData = [
     },
     {
         id: 3,
+        category: "App Dev",
+        title: "Chat App(Flutter based application)",
+        description: "ChatApp is a Flutter-based real-time messenger with Firebase authentication and sync, supporting text, images, videos, GIFs, stickers, and emojis. Easily connect new users via phone number or search existing users by name.",
+        thumbnailUrl: "/chatapp thumbnail.png",
+        techTags: ["Dart", "Firebase", "Cloudinary"],
+        liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutterproject-flutter-dart-activity-7369771020095864833-OPVR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
+        githubRepo: "https://github.com/Abhinavsharma005/Chat-App",
+    },
+   
+    {
+        id: 4,
         category: "Web",
         title: "Spotify Desktop Clone",
         description: "A clean, stylish and functional Spotify Desktop Clone built using react js and tailwindcss — search tracks via the Spotify Web API, play songs, control playback, and save liked songs.",
@@ -34,7 +45,7 @@ const projectsData = [
     },
    
     {
-        id: 4,
+        id: 5,
         category: "Web",
         title: "PokeDeck(Finds Pokemon Data by Search and Filters)",
         description: "A modern, responsive web application that shows Pokémon details on a 3D cards that can flip on tap to reveal more information powered by Pokeapi.",
@@ -43,17 +54,7 @@ const projectsData = [
         liveDemo: "https://poke-deck-roan.vercel.app/",
         githubRepo: "https://github.com/Abhinavsharma005/PokeDeck",
     },
-    {
-        id: 5,
-        category: "App Dev",
-        title: "TechNewz (A tech-based news application)",
-        description: "TechNewz is a simple Flutter-based news application that fetches the latest technology news using the NewsAPI. The app allows users to stay updated with trending tech stories, read brief summaries, and open the full article via the provided URL.",
-        thumbnailUrl: "/technews thumbnail.png",
-        techTags: ["Dart", "NewsApi"],
-        liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutter-dart-newsapp-activity-7365595601838817280-0dmD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
-        githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
-    },
-    {
+      {
         id: 6,
         category: "App Dev",
         title: "ToDo App",
@@ -66,22 +67,23 @@ const projectsData = [
     {
         id: 7,
         category: "App Dev",
+        title: "TechNewz (A tech-based news application)",
+        description: "TechNewz is a simple Flutter-based news application that fetches the latest technology news using the NewsAPI. The app allows users to stay updated with trending tech stories, read brief summaries, and open the full article via the provided URL.",
+        thumbnailUrl: "/technews thumbnail.png",
+        techTags: ["Dart", "NewsApi"],
+        liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutter-dart-newsapp-activity-7365595601838817280-0dmD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
+        githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
+    },
+  
+    {
+        id: 8,
+        category: "App Dev",
         title: "Flutter Movie App",
         description: "Flutter Movie App A simple movie browsing app built with Flutter, powered by the TMDB API. Users can explore trending and popular movies, view details like ratings and overviews, and enjoy a clean, responsive UI with smooth performance.",
         thumbnailUrl: "/movie app thumbnail.png",
         techTags: ["Dart", "TMDB Api"],
         liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutter-dart-movieapp-activity-7366051340466167809-DqmY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
         githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
-    },
-     {
-        id: 8,
-        category: "Web",
-        title: "Myntra Clone",
-        description: "A simple clone of Myntra website using HTML, CSS & JS.",
-        thumbnailUrl: "/myntra thumbnail.png",
-        techTags: ["HTML", "CSS", "JavaScript"],
-        liveDemo: "https://abhinavsharma005.github.io/Myntra-Clone-Website/",
-        githubRepo: "https://github.com/Abhinavsharma005/Myntra-Clone-Website",
     },
     
 ];
