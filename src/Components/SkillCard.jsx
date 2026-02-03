@@ -1,6 +1,6 @@
 import React from "react";
 
-const SkillCard = ({ icon: Icon, title, skills }) => {
+const SkillCard = ({ icon: Icon, title, skills, className }) => {
   // Default color (from first skill)
   let mainColor = skills[0]?.color || "#3B82F6";
 
@@ -9,9 +9,9 @@ const SkillCard = ({ icon: Icon, title, skills }) => {
 
   return (
     <div
-      className="rounded-2xl p-6 w-full sm:w-[320px] shadow-lg transform transition-all duration-300 hover:scale-105 backdrop-blur-md"
+      className={`rounded-2xl p-6 w-full sm:w-[320px] shadow-lg transform transition-all duration-300 hover:scale-105 backdrop-blur-md ${className || ''}`}
       style={{
-        backgroundColor: "rgba(15, 19, 33, 0.7)", 
+        backgroundColor: "rgba(15, 19, 33, 0.7)",
         border: "1px solid #2b3042",
         boxShadow: "0 0 25px rgba(0,0,0,0.3)",
       }}

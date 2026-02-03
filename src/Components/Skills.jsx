@@ -90,7 +90,6 @@ const Skills = () => {
   ];
 
   const exploring = [
-
     "Express",
     "Node.js",
     "TensorFlow",
@@ -102,7 +101,6 @@ const Skills = () => {
     "React",
     "TypeScript",
     "Generative AI",
-
   ];
 
   const containerVariants = {
@@ -124,9 +122,9 @@ const Skills = () => {
     <div>
       <motion.h1
         className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600 mt-10"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         Skills & Expertise
@@ -142,22 +140,26 @@ const Skills = () => {
         learning and adapting to new challenges.
       </motion.p>
 
-      {/* Cards Section */}
+      {/* Cards Section*/}
       <motion.div
-        className="flex flex-wrap justify-center gap-8 p-8 max-w-7xl mx-auto overflow-x-auto"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-6xl mx-auto"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         {skillData.map((data) => (
-          <motion.div key={data.title} variants={itemVariants}>
+          <motion.div
+            key={data.title}
+            variants={itemVariants}
+            className="flex flex-col h-full"
+          >
             <SkillCard
               icon={data.icon}
               title={data.title}
               iconColor={data.iconColor}
               skills={data.skills}
-              className="bg-[#11141d]/80 border border-[#1b1e2a] backdrop-blur-md"
+              className="bg-[#11141d]/80 border border-[#1b1e2a] backdrop-blur-md h-full w-full max-w-none"
             />
           </motion.div>
         ))}
@@ -167,7 +169,7 @@ const Skills = () => {
       <div className="text-center mt-16 mb-16">
         <motion.h2
           className="text-3xl font-semibold text-white mb-6"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -181,12 +183,11 @@ const Skills = () => {
               key={tech}
               className="px-4 py-2 bg-[#1B2437]/70 text-cyan-400 rounded-lg animate-float"
               style={{
-                animationDelay: `${index * 0.2}s`,
-                // keeping the original opacity logic might conflict with motion, but let's try to mix them or just use motion for entrance
+                // Mixing pure css animation with Framer Motion entrance
               }}
               initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 0.8 + Math.random() * 0.2, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
               {tech}
