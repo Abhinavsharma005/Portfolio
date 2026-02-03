@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { FaCodeBranch, FaExternalLinkAlt, FaVideo, FaChevronDown, FaChevronUp } from 'react-icons/fa'; 
+import { FaCodeBranch, FaExternalLinkAlt, FaVideo, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const projectsData = [
-     {
+    {
         id: 1,
         category: "Full-Stack",
         title: "EduStream - Live Teaching Platform",
         description: "EduStream is a role-based live teaching platform inspired by Twitch and YouTube Live, but optimized for education. It enables teachers to broadcast classes while students interact via real-time chat, live polls, and interactive quizzes.",
         thumbnailUrl: "/edustream.png",
-        techTags: ["Next.js","Typescript","TailwindCSS","MongoDB","Redis","Livekit-WebRTC", "Socket.IO","Framer Motion","Cloudinary"],
+        techTags: ["Next.js", "Typescript", "TailwindCSS", "MongoDB", "Redis", "Livekit-WebRTC", "Socket.IO", "Framer Motion", "Cloudinary"],
         liveDemo: "https://edustream-syxz.onrender.com/",
         githubRepo: "https://github.com/Abhinavsharma005/EduStream",
     },
-     {
+    {
         id: 2,
         category: "Full-Stack",
         title: "Shorty - URL Shortener",
@@ -32,7 +33,7 @@ const projectsData = [
         liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutterproject-flutter-dart-activity-7369771020095864833-OPVR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
         githubRepo: "https://github.com/Abhinavsharma005/Chat-App",
     },
-   
+
     {
         id: 4,
         category: "Web",
@@ -43,7 +44,7 @@ const projectsData = [
         liveDemo: "https://spotify-clone-vert-chi.vercel.app/",
         githubRepo: "https://github.com/Abhinavsharma005/Spotify-Clone",
     },
-   
+
     {
         id: 5,
         category: "Web",
@@ -54,7 +55,7 @@ const projectsData = [
         liveDemo: "https://poke-deck-roan.vercel.app/",
         githubRepo: "https://github.com/Abhinavsharma005/PokeDeck",
     },
-      {
+    {
         id: 6,
         category: "App Dev",
         title: "ToDo App",
@@ -74,7 +75,7 @@ const projectsData = [
         liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutter-dart-newsapp-activity-7365595601838817280-0dmD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
         githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
     },
-  
+
     {
         id: 8,
         category: "App Dev",
@@ -85,7 +86,7 @@ const projectsData = [
         liveDemo: "https://www.linkedin.com/posts/abhinav-sharma-314319327_flutter-dart-movieapp-activity-7366051340466167809-DqmY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJzY4ABokuOV1bS8C6y6y1n7ErKmfl6koU",
         githubRepo: "https://github.com/Abhinavsharma005/flutter-movie-app",
     },
-    
+
 ];
 
 const categories = ["All", "Web", "Full-Stack", "AI/ML", "App Dev"];
@@ -95,11 +96,18 @@ const ProjectCard = ({ project }) => {
 
     const primaryLinkText = isAppDev ? 'Demo Video' : 'Live Demo';
     const PrimaryLinkIcon = isAppDev ? FaVideo : FaExternalLinkAlt;
-    
+
     const primaryLinkStyle = 'text-white bg-indigo-600 hover:bg-indigo-700';
 
     return (
-        <div className="bg-[#11141D]/90 border border-[#1B2437] rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
+        <motion.div
+            className="bg-[#11141D]/90 border border-[#1B2437] rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-300"
+            layout
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+        >
             {/* Thumbnail with Category Tag Overlay */}
             <div className="relative h-70 w-full">
                 <img
@@ -152,7 +160,7 @@ const ProjectCard = ({ project }) => {
                     )}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -170,16 +178,16 @@ const Projects = () => {
     const projectsToDisplay = (activeCategory === "All" && !showAll)
         ? filteredProjects.slice(0, PROJECT_LIMIT)
         : filteredProjects;
-    
+
     // Check if the "View More" button is needed
     const showViewMoreButton = activeCategory === "All" && projectsData.length > PROJECT_LIMIT;
     const buttonText = showAll ? "View Less" : "View More";
 
     const handleCategoryChange = (category) => {
         setActiveCategory(category);
-        
+
         if (category === "All") {
-            setShowAll(false); 
+            setShowAll(false);
         } else {
             setShowAll(true);
         }
@@ -188,12 +196,24 @@ const Projects = () => {
     return (
         <div className="py-20 bg-black min-h-screen text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 className="text-6xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600">
+                <motion.h1
+                    className="text-6xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600"
+                    initial={{ opacity: 0, y: -50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
                     Featured Projects
-                </h1>
+                </motion.h1>
 
                 {/* Category Tabs */}
-                <div className="flex justify-center flex-wrap gap-3 mb-12">
+                <motion.div
+                    className="flex justify-center flex-wrap gap-3 mb-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
                     {categories.map(category => (
                         <button
                             key={category}
@@ -209,21 +229,26 @@ const Projects = () => {
                             {category}
                         </button>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {projectsToDisplay.map(project => (
-                        <ProjectCard key={project.id} project={project} />
-                    ))}
-                </div>
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+                    layout
+                >
+                    <AnimatePresence>
+                        {projectsToDisplay.map(project => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
 
                 {/* View More/View Less Button only for 'All' tab */}
                 {showViewMoreButton && (
                     <div className="flex flex-col items-center justify-center mt-10">
                         {showAll && (
-                            <FaChevronUp 
-                                className="text-[#54c8fe] text-lg mb-2 animate-bounce transition duration-300" 
+                            <FaChevronUp
+                                className="text-[#54c8fe] text-lg mb-2 animate-bounce transition duration-300"
                             />
                         )}
 
@@ -235,13 +260,13 @@ const Projects = () => {
                         </button>
 
                         {!showAll && (
-                            <FaChevronDown 
-                                className="text-[#54c8fe] text-lg mt-2 animate-bounce transition duration-300" 
+                            <FaChevronDown
+                                className="text-[#54c8fe] text-lg mt-2 animate-bounce transition duration-300"
                             />
                         )}
                     </div>
                 )}
-                
+
                 {/* Fallback for no projects in a category */}
                 {filteredProjects.length === 0 && (
                     <p className="text-center text-xl text-[#94A3B8] mt-10">

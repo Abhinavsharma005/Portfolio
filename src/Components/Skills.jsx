@@ -1,5 +1,6 @@
 import React from "react";
 import SkillCard from "./SkillCard";
+import { motion } from "framer-motion";
 import {
   FaCode,
   FaDatabase,
@@ -37,7 +38,7 @@ const Skills = () => {
     {
       icon: FaDatabase,
       title: "Backend & Database",
-      iconColor: "#FF69B4", 
+      iconColor: "#FF69B4",
       skills: [
         { name: "Node.js", color: "#7fc728" },
         { name: "Express.js", color: "#999999" },
@@ -49,7 +50,7 @@ const Skills = () => {
     {
       icon: FaTools,
       title: "DevOps & Tools",
-      iconColor: "#FFD700", 
+      iconColor: "#FFD700",
       skills: [
         { name: "Git", color: "#FFA000" },
         { name: "GitHub", color: "#EEF7FF" },
@@ -58,7 +59,7 @@ const Skills = () => {
         { name: "Postman", color: "#FF6C37" },
         { name: "Vercel", color: "#D4C7FC" },
         { name: "Render", color: "#9365DB" },
-        { name: "Shadcn/ui", color: "#f7f7f7" },   
+        { name: "Shadcn/ui", color: "#f7f7f7" },
         { name: "Figma", color: "#04c97e" },
       ],
     },
@@ -88,7 +89,7 @@ const Skills = () => {
   ];
 
   const exploring = [
-    
+
     "Express",
     "Node.js",
     "TensorFlow",
@@ -100,51 +101,95 @@ const Skills = () => {
     "React",
     "TypeScript",
     "Generative AI",
-    
+
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
 
   return (
     <div>
-      <h1 className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600 mt-10">
+      <motion.h1
+        className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600 mt-10"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Skills & Expertise
-      </h1>
-      <p className="text-2xl text-[#94A3B8] max-w-3xl mx-auto mt-12 text-center">
+      </motion.h1>
+      <motion.p
+        className="text-2xl text-[#94A3B8] max-w-3xl mx-auto mt-12 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         Technologies and tools I use to bring ideas to life. Continuously
         learning and adapting to new challenges.
-      </p>
+      </motion.p>
 
       {/* Cards Section */}
-      <div className="flex flex-wrap justify-center gap-8 p-8 max-w-7xl mx-auto overflow-x-auto">
+      <motion.div
+        className="flex flex-wrap justify-center gap-8 p-8 max-w-7xl mx-auto overflow-x-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {skillData.map((data) => (
-          <SkillCard
-            key={data.title}
-            icon={data.icon}
-            title={data.title}
-            iconColor={data.iconColor}
-            skills={data.skills}
-            className="bg-[#11141d]/80 border border-[#1b1e2a] backdrop-blur-md"
-          />
+          <motion.div key={data.title} variants={itemVariants}>
+            <SkillCard
+              icon={data.icon}
+              title={data.title}
+              iconColor={data.iconColor}
+              skills={data.skills}
+              className="bg-[#11141d]/80 border border-[#1b1e2a] backdrop-blur-md"
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Exploring Section */}
       <div className="text-center mt-16 mb-16">
-        <h2 className="text-3xl font-semibold text-white mb-6">
+        <motion.h2
+          className="text-3xl font-semibold text-white mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           Technologies I'm currently exploring
-        </h2>
+        </motion.h2>
 
         <div className="flex flex-wrap justify-center gap-4">
           {exploring.map((tech, index) => (
-            <div
+            <motion.div
               key={tech}
               className="px-4 py-2 bg-[#1B2437]/70 text-cyan-400 rounded-lg animate-float"
               style={{
                 animationDelay: `${index * 0.2}s`,
-                opacity: 0.8 + Math.random() * 0.2,
+                // keeping the original opacity logic might conflict with motion, but let's try to mix them or just use motion for entrance
               }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 0.8 + Math.random() * 0.2, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
               {tech}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
