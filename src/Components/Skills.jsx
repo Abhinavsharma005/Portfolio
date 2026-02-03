@@ -182,16 +182,19 @@ const Skills = () => {
           {exploring.map((tech, index) => (
             <motion.div
               key={tech}
-              className="px-4 py-2 bg-[#1B2437]/70 text-cyan-400 rounded-lg animate-float"
-              style={{
-                animationDelay: `${index * 0.2}s`,
-              }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
-              {tech}
+              <div
+                className="px-4 py-2 bg-[#1B2437]/70 text-cyan-400 rounded-lg animate-float"
+                style={{
+                  animationDelay: `${index * 0.2}s`,
+                }}
+              >
+                {tech}
+              </div>
             </motion.div>
           ))}
         </div>
