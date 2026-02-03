@@ -18,7 +18,7 @@ const About = () => {
           </p>
           <br />
           <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
-            I enjoy working with technologies like Flutter mobile development and web development tools to craft <span className="text-cyan-400 font-medium">smart, scalable, and user-focused solutions</span>. Alongside this, I have a strong interest in Machine Learning and Data Science, exploring areas such as <span className="text-cyan-400 font-medium">data preprocessing, predictive analytics, and model integration</span> to create intelligent and adaptive systems.
+            I've expertise in Web development and Flutter mobile development and to make <span className="text-cyan-400 font-medium">smart, scalable, and user-focused solutions</span>. Alongside this, I have a strong interest in Machine Learning and Data Science, exploring areas such as <span className="text-cyan-400 font-medium">data preprocessing, predictive analytics, and model integration</span> to create intelligent and adaptive systems.
           </p>
           <br />
           <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
