@@ -147,7 +147,7 @@ function App() {
                 </p>
 
                 <div className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-4 w-full px-4 animate-pop-up-4'>
-                  <a href="">
+                  <a href="/resume.pdf" download="Abhinav_Sharma_Resume.pdf">
                     <button className='button1'><MdOutlineFileDownload /> Download Resume</button>
                   </a>
                   <a href="https://github.com/Abhinavsharma005" target="_blank" rel="noopener noreferrer">
