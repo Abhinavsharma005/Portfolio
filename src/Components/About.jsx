@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import SkillsDataCard from "./SkillsDataCard";
 import { motion } from "framer-motion";
@@ -21,7 +21,7 @@ const About = () => {
         </div>
 
         {/* Flex container for paragraphs and cards */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8 px-4">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8 px-3.5">
           {/* Left side: Paragraphs */}
           <motion.div
             className="md:w-1/2 md:mt-7 p-2"
@@ -31,15 +31,75 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
-              I'm <span className="text-cyan-400 font-medium">Abhinav Sharma</span>, an IT undergraduate pursuing a Bachelor of Technology at the University Institute of Technology, RGPV Bhopal. I’m passionate about <span className="text-cyan-400 font-medium">software development</span>, problem-solving, and building <span className="text-cyan-400 font-medium">real-world applications</span> that combine innovation with practical design.
+              I'm{" "}
+              <span className="text-cyan-400 font-medium">Abhinav Sharma</span>,
+              an IT undergraduate pursuing a Bachelor of Technology at the
+              University Institute of Technology, RGPV Bhopal. I’m passionate
+              about{" "}
+              <span className="text-cyan-400 font-medium">
+                software development
+              </span>
+              , problem-solving, and building{" "}
+              <span className="text-cyan-400 font-medium">
+                real-world applications
+              </span>
+              .
             </p>
             <br />
             <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
-              I've expertise in Web development and Flutter mobile development and to make <span className="text-cyan-400 font-medium">smart, scalable, and user-focused solutions</span>. Alongside this, I have a strong interest in Machine Learning and Data Science, exploring areas such as <span className="text-cyan-400 font-medium">data preprocessing, predictive analytics, and model integration</span> to create intelligent and adaptive systems.
+              I've expertise in{" "}
+              <span className="text-cyan-400 font-medium">
+                Full-Stack Web development
+              </span>
+              . I also explore{" "}
+              <span className="text-cyan-400 font-medium">App Development</span>{" "}
+              mainly for my personal use
+              <span className="text-cyan-400 font-medium"> projects </span> or{" "}
+              <span className="text-cyan-400 font-medium"> tools</span>, while
+              my primary professional focus remains on{" "}
+              <span className="text-cyan-400 font-medium">web development</span>
+              . Alongside this, I have a strong interest and currently exploring
+              <span className="text-cyan-400 font-medium">
+                {" "}
+                Machine Learning
+              </span>{" "}
+              and
+              <span className="text-cyan-400 font-medium">
+                {" "}
+                Data Science
+              </span>{" "}
+              so that
+              <span className="text-cyan-400 font-medium">
+                {" "}
+                integrating
+              </span>{" "}
+              machine learning and AI-powered features with the web projects
+              where it makes the most impact.
             </p>
+            {/* <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
+              I've expertise in Full-Stack Web development and to make <span className="text-cyan-400 font-medium">smart, scalable, </span> and <span className="text-cyan-400 font-medium"> user-focused solutions</span>, while <span className="text-cyan-400 font-medium">mobile app development</span> remains a space I explore mainly for my personal use projects/tools . Alongside this, I have a strong interest in Machine Learning and Data Science, exploring areas such as <span className="text-cyan-400 font-medium">data preprocessing, predictive analytics, and model integration</span> to create intelligent and adaptive systems.
+            </p> */}
             <br />
             <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
-              Currently, I’m focused on projects that bring together <span className="text-cyan-400 font-medium">usability and performance</span>, while continuously learning new technologies to sharpen both my <span className="text-cyan-400 font-medium">frontend and backend</span> development skills.
+              I enjoy exploring{" "}
+              <span className="text-cyan-400 font-medium">
+                new technologies
+              </span>{" "}
+              and
+              <span className="text-cyan-400 font-medium">
+                {" "}
+                transforming ideas
+              </span>{" "}
+              into
+              <span className="text-cyan-400 font-medium">
+                {" "}
+                practical products
+              </span>{" "}
+              that solve
+              <span className="text-cyan-400 font-medium"> real problems</span>,
+              with a strong interest in contributing to{" "}
+              <span className="text-cyan-400 font-medium">product-focused</span>{" "}
+              teams building impactful solutions.
             </p>
           </motion.div>
 
@@ -55,7 +115,6 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-
     </>
   );
 };
