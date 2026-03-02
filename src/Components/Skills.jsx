@@ -82,23 +82,23 @@ const Skills = () => {
       iconColor: "#61DAFB",
       skills: [
         { name: "Android Studio", color: "#3DDC84" },
+        { name: "React Native (expo)", color: "#61DAFB" },
         { name: "Flutter", color: "#46D1FD" },
-        { name: "wait..React Native", color: "#61DAFB" },
-        { name: "Dart", color: "#2bb7f6" },
+        
       ],
     },
   ];
 
   const exploring = [
-    "Express",
-    "Node.js",
+    "Ai/Ml",
+    "Matplotlib",
     "TensorFlow",
     "Kubernetes",
     "Docker",
-    "FastAPI",
+    "NumPy",
     "GraphQL",
     "Next.js",
-    "React",
+    "Pytorque",
     "TypeScript",
     "Generative AI",
   ];
