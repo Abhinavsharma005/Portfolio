@@ -11,7 +11,7 @@ const skillsData = [
   },
   {
     title: 'Database Design',
-    description: 'Soon..Experience with PostgreSQL, MongoDB and complex data modeling',
+    description: 'Experience with MongoDB ,PostgreSQL and complex data modeling',
     icon: LuDatabase
   },
   {
