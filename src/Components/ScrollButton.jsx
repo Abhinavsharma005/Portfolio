@@ -19,7 +19,7 @@ const ScrollButton = ({ targetId }) => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-20 mb-16 select-none animate-float">
+    <div className="flex flex-col items-center mt-8 mb-16 select-none animate-float">
       {/* Mouse outline */}
       <div
         onClick={handleScroll}
