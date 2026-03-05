@@ -12,6 +12,8 @@ import { FiLinkedin } from "react-icons/fi";
 import ScrollButton from './Components/ScrollButton';
 import ScrollToTop from './Components/ScrollToTop';
 import Footer from './Components/Footer';
+import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
+import { SiTailwindcss, SiJavascript } from 'react-icons/si';
 import ParticlesBackground from './Components/ParticlesBackground';
 
 const NavLink = ({ href, targetId, currentActive, children, onClick }) => {
@@ -38,8 +40,8 @@ function App() {
 
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -70% 0px',
-      threshold: 0.1,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -57,7 +59,7 @@ function App() {
 
   return (
     <>
-    <ParticlesBackground />
+      <ParticlesBackground />
       <ScrollToTop />
 
       {/* Navigation Bar */}
@@ -134,31 +136,86 @@ function App() {
           <Route path="/" element={
             <>
               {/* Home Section */}
-              <div id="" className='pt-[58px]'>
-                <h3 id='home-section' className="text-3xl text-[#54c8fe] animate-pop-up-1">Welcome, I'm</h3>
-                <h1 className='text-7xl font-bold mt-7 mb-9 animate-pop-up-2'>Abhinav Sharma
-                  <span className='inline-block float-custom'>👋</span>
-                </h1>
-                <div className='animate-pop-up-3'>
-                    <RotatingSkills />
-                </div>
-                <p className='text-2xl text-[#94A3B8] max-w-3xl mx-auto mt-12 animate-pop-up-4'>
-                  Building scalable applications and intelligent systems that inspire and empower.
-                </p>
+              <div id="home-section" className='pt-[48px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24'>
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
 
-                <div className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-4 w-full px-4 animate-pop-up-4'>
-                  <a href="/Abhinav_Sharma_Resume.pdf" download="Abhinav_Sharma_Resume.pdf">
-                    <button className='button1'><MdOutlineFileDownload /> Download Resume</button>
-                  </a>
-                  <a href="https://github.com/Abhinavsharma005" target="_blank" rel="noopener noreferrer">
-                    <button className='button1'><FiGithub />Visit Github</button>
-                  </a>
-                  <a href="https://linkedin.com/in/abhinav-sharma-314319327" target="_blank" rel="noopener noreferrer">
-                    <button className='button1'><FiLinkedin /> Connect on Linkedin</button>
-                  </a>
+                  {/* Left Column - Content */}
+                  <div className="lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left mt-8 lg:mt-0">
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-2 animate-pop-up-1">Welcome, I'm</h1>
+                    <h1 className='text-4xl sm:text-6xl md:text-7xl font-bold mb-6 animate-pop-up-2'>Abhinav Sharma
+                      <span className='inline-block float-custom ml-2'>👋</span>
+                    </h1>
+                    <div className='animate-pop-up-3'>
+                      <RotatingSkills />
+                    </div>
+                    <p className='text-lg sm:text-xl md:text-2xl text-[#94A3B8] max-w-2xl mt-6 animate-pop-up-4'>
+                      Building scalable applications and intelligent systems that inspire and empower.
+                    </p>
+
+                    <div className='flex flex-col sm:flex-row justify-center lg:justify-start items-center mt-10 gap-4 w-full animate-pop-up-4'>
+                      <a href="/Abhinav_Sharma_Resume.pdf" download="Abhinav_Sharma_Resume.pdf">
+                        <button className='button1'><MdOutlineFileDownload /> Download Resume</button>
+                      </a>
+                      <a href="https://github.com/Abhinavsharma005" target="_blank" rel="noopener noreferrer">
+                        <button className='button1'><FiGithub />Visit Github</button>
+                      </a>
+                      <a href="https://linkedin.com/in/abhinav-sharma-314319327" target="_blank" rel="noopener noreferrer">
+                        <button className='button1'><FiLinkedin /> Connect on Linkedin</button>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Profile & Badges */}
+                  <div className="lg:w-[45%] relative flex justify-center items-center mt-12 lg:mt-0 animate-pop-up-3">
+                    <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] rounded-full p-2"
+                      style={{ background: 'linear-gradient(145deg, rgba(84,200,254,0.1) 0%, rgba(12,18,40,0) 100%)' }}>
+
+                      {/* Animated border ring */}
+                      <div className="absolute inset-0 rounded-full border border-dashed border-[#54c8fe]/40 animate-[spin_20s_linear_infinite]"></div>
+                      <div className="absolute inset-2 rounded-full border border-solid border-[#1e293b]"></div>
+
+                      {/* Profile Picture Placeholder */}
+                      <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#0a0f20] relative z-10 bg-[#0c1228] flex items-center justify-center transform transition-all duration-500 hover:scale-110 hover:rotate-3 cursor-pointer">
+                        <img
+                          src="/office_photo.jpeg"
+                          alt="Abhinav Sharma"
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.style.display = 'none';
+                            e.target.parentElement.innerHTML += '<div class="text-4xl text-[#54c8fe] font-bold">AS</div>';
+                          }}
+                        />
+                      </div>
+
+                      {/* Floating Skill Badges */}
+                      <div className="absolute top-[8%] -left-[2%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(84,200,254,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '0s' }}>
+                        <FaReact className="text-[#61DAFB] text-xl sm:text-2xl" />
+                      </div>
+
+                      <div className="absolute top-[22%] -right-[5%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(104,160,99,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '1.2s' }}>
+                        <FaNodeJs className="text-[#68A063] text-xl sm:text-2xl" />
+                      </div>
+
+                      <div className="absolute bottom-[22%] -left-[4%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(247,223,30,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '2.5s' }}>
+                        <SiJavascript className="text-[#F7DF1E] text-xl sm:text-2xl" />
+                      </div>
+
+                      <div className="absolute -bottom-[2%] right-[12%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(56,189,248,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '0.8s' }}>
+                        <SiTailwindcss className="text-[#38BDF8] text-xl sm:text-2xl" />
+                      </div>
+
+                      <div className="absolute -top-[2%] right-[18%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(55,118,171,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '1.8s' }}>
+                        <FaPython className="text-[#3776AB] text-xl sm:text-2xl" />
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
 
-                <ScrollButton targetId="about-heading" />
+                <div className="flex justify-center mt-6 w-full animate-pop-up-4">
+                  <ScrollButton targetId="about-heading" />
+                </div>
               </div>
 
               {/* Other Sections */}
