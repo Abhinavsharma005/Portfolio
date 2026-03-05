@@ -13,7 +13,7 @@ import ScrollButton from './Components/ScrollButton';
 import ScrollToTop from './Components/ScrollToTop';
 import Footer from './Components/Footer';
 import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
-import { SiTailwindcss, SiJavascript } from 'react-icons/si';
+import { SiTailwindcss, SiMongodb, SiNextdotjs } from 'react-icons/si';
 import ParticlesBackground from './Components/ParticlesBackground';
 
 const NavLink = ({ href, targetId, currentActive, children, onClick }) => {
@@ -188,25 +188,35 @@ function App() {
                         />
                       </div>
 
-                      {/* Floating Skill Badges */}
+                      {/* Floating Skill Badges (6 items in Orbit) */}
+                      {/* Top Left */}
                       <div className="absolute top-[8%] -left-[2%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(84,200,254,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '0s' }}>
                         <FaReact className="text-[#61DAFB] text-xl sm:text-2xl" />
                       </div>
 
-                      <div className="absolute top-[22%] -right-[5%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(104,160,99,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '1.2s' }}>
+                      {/* Top Right */}
+                      <div className="absolute -top-[5%] right-[22%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(71,162,72,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '0.5s' }}>
+                        <SiMongodb className="text-[#47A248] text-xl sm:text-2xl" />
+                      </div>
+
+                      {/* Right Middle */}
+                      <div className="absolute top-[35%] -right-[8%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(104,160,99,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '1.2s' }}>
                         <FaNodeJs className="text-[#68A063] text-xl sm:text-2xl" />
                       </div>
 
-                      <div className="absolute bottom-[22%] -left-[4%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(247,223,30,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '2.5s' }}>
-                        <SiJavascript className="text-[#F7DF1E] text-xl sm:text-2xl" />
+                      {/* Bottom Right */}
+                      <div className="absolute bottom-[5%] -right-[2%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(255,255,255,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '2.5s' }}>
+                        <SiNextdotjs className="text-white text-xl sm:text-2xl" />
                       </div>
 
-                      <div className="absolute -bottom-[2%] right-[12%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(56,189,248,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '0.8s' }}>
-                        <SiTailwindcss className="text-[#38BDF8] text-xl sm:text-2xl" />
-                      </div>
-
-                      <div className="absolute -top-[2%] right-[18%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(55,118,171,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '1.8s' }}>
+                      {/* Bottom Left */}
+                      <div className="absolute -bottom-[5%] left-[25%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(55,118,171,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '1.8s' }}>
                         <FaPython className="text-[#3776AB] text-xl sm:text-2xl" />
+                      </div>
+
+                      {/* Left Middle */}
+                      <div className="absolute top-[45%] -left-[8%] z-20 p-2 sm:p-2.5 bg-[#0a0f20] rounded-xl shadow-[0_4px_15px_rgba(56,189,248,0.15)] border border-[#1e293b] animate-float cursor-pointer hover:scale-110 transition-transform" style={{ animationDelay: '0.8s' }}>
+                        <SiTailwindcss className="text-[#38BDF8] text-xl sm:text-2xl" />
                       </div>
                     </div>
                   </div>
