@@ -197,15 +197,17 @@ const Projects = () => {
     return (
         <div className="py-20 bg-black min-h-screen text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.h1
-                    className="text-6xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600"
-                    initial={{ opacity: 0, y: -50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    Featured Projects
-                </motion.h1>
+                <div className="flex justify-center mb-16">
+                    <motion.h1
+                        className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600"
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        Featured Projects
+                    </motion.h1>
+                </div>
 
                 {/* Category Tabs */}
                 <motion.div
