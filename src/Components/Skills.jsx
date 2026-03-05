@@ -84,7 +84,7 @@ const Skills = () => {
         { name: "Android Studio", color: "#3DDC84" },
         { name: "React Native (expo)", color: "#61DAFB" },
         { name: "Flutter", color: "#46D1FD" },
-        
+
       ],
     },
   ];
@@ -120,15 +120,17 @@ const Skills = () => {
 
   return (
     <div>
-      <motion.h1
-        className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600 mt-10"
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        Skills & Expertise
-      </motion.h1>
+      <div className="flex justify-center mt-10">
+        <motion.h1
+          className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Skills & Expertise
+        </motion.h1>
+      </div>
       <motion.p
         className="text-2xl text-[#94A3B8] max-w-3xl mx-auto mt-12 text-center"
         initial={{ opacity: 0 }}
