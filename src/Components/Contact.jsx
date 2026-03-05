@@ -110,15 +110,17 @@ const Contact = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
                 <div className="mb-16 max-w-3xl mx-auto text-center">
-                    <motion.h1
-                        className='text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600 mt-7 mb-9'
-                        initial={{ opacity: 0, y: -50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        Get in Touch
-                    </motion.h1>
+                    <div className="flex justify-center mt-7 mb-9">
+                        <motion.h1
+                            className='text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600'
+                            initial={{ opacity: 0, y: -50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            Get in Touch
+                        </motion.h1>
+                    </div>
                     <motion.p
                         className='text-2xl text-[#94A3B8]'
                         initial={{ opacity: 0 }}
