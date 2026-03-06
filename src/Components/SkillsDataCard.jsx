@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from './Card'; 
-import { LuCode, LuDatabase, LuZap } from 'react-icons/lu'; 
+import { LuCode, LuZap } from 'react-icons/lu'; 
 import { FaRegClock } from "react-icons/fa";
+import { GoPeople } from "react-icons/go";
 
 const skillsData = [
   {
@@ -10,9 +11,9 @@ const skillsData = [
     icon:  FaRegClock
   },
   {
-    title: 'Database Design',
-    description: 'Experience with MongoDB ,PostgreSQL and complex data modeling',
-    icon: LuDatabase
+    title: 'Hackathon & Open Source',
+    description: 'Worked with open source, hackathon and ready to contribute to communities',
+    icon: GoPeople 
   },
   {
     title: 'AI Integration',
@@ -25,12 +26,6 @@ const skillsData = [
     icon: LuCode
   },
 ];
-// const cardAnimationClasses = [
-//     "animate-card-pop-1",
-//     "animate-card-pop-2",
-//     "animate-card-pop-3",
-//     "animate-card-pop-4",
-// ];
 
 const SkillsDataCard = () => {
   return (
@@ -41,7 +36,6 @@ const SkillsDataCard = () => {
           title={skill.title}
           description={skill.description}
           Icon={skill.icon}
-          // className={cardAnimationClasses[index % cardAnimationClasses.length]}
         />
       ))}
     </div>
