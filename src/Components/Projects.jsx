@@ -9,7 +9,7 @@ const projectsData = [
         category: "Full-Stack",
         title: "EduStream - Live Teaching Platform",
         description: "EduStream is a role-based live teaching platform inspired by Twitch and YouTube Live, but optimized for education. It enables teachers to broadcast classes while students interact via real-time chat, live polls, and interactive quizzes.",
-        thumbnailUrl: "/edustream.png",
+        thumbnailUrl: "/edustream-2.png",
         techTags: ["Next.js", "Typescript", "TailwindCSS", "MongoDB", "Redis", "Livekit-WebRTC", "Socket.IO", "Framer Motion", "Cloudinary"],
         liveDemo: "https://edustream-syxz.onrender.com/",
         githubRepo: "https://github.com/Abhinavsharma005/EduStream",
