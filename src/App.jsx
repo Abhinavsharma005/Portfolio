@@ -15,6 +15,7 @@ import Footer from './Components/Footer';
 import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiNextdotjs } from 'react-icons/si';
 import ParticlesBackground from './Components/ParticlesBackground';
+import Cursor from './Components/Cursor';
 
 const NavLink = ({ href, targetId, currentActive, children, onClick }) => {
   const isActive = currentActive === targetId;
@@ -59,6 +60,7 @@ function App() {
 
   return (
     <>
+    <Cursor />
       <ParticlesBackground />
       <ScrollToTop />
 
