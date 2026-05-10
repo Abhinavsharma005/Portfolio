@@ -316,7 +316,7 @@ const FloatingTerminal = () => {
           <div
             onClick={e => e.stopPropagation()}
             style={{
-              width: 'min(700px, 95vw)',
+              width: 'min(840px, 95vw)',
               borderRadius: '12px',
               overflow: 'hidden',
               background: '#0d1117',
@@ -377,7 +377,7 @@ const FloatingTerminal = () => {
             {/* ── Output ── */}
             <div
               style={{
-                height: '340px',
+                height: '440px',
                 overflowY: 'auto',
                 padding: '16px 20px 8px',
                 fontFamily: "'JetBrains Mono','Fira Code','Cascadia Code',monospace",
