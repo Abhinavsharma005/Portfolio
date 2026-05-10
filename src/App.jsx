@@ -17,6 +17,7 @@ import { SiTailwindcss, SiMongodb, SiNextdotjs } from 'react-icons/si';
 import ParticlesBackground from './Components/ParticlesBackground';
 import Cursor from './Components/Cursor';
 import TargetCursor from './Components/TargetCursor';
+import FloatingTerminal from './Components/FloatingTerminal';
 
 const NavLink = ({ href, targetId, currentActive, children, onClick }) => {
   const isActive = currentActive === targetId;
@@ -65,6 +66,7 @@ function App() {
     <TargetCursor targetSelector=".cursor-target, a, button, .button1" />
       <ParticlesBackground />
       <ScrollToTop />
+      <FloatingTerminal />
 
       {/* Navigation Bar */}
       <div
