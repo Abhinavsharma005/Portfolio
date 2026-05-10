@@ -3,8 +3,16 @@ import Card from './Card';
 import { LuCode, LuZap } from 'react-icons/lu';
 import { FaRegClock } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
+import { IconType } from 'react-icons';
 
-const skillsData = [
+interface SkillDataItem {
+  title: string;
+  description: string;
+  icon: IconType;
+  color: string;
+}
+
+const skillsData: SkillDataItem[] = [
   {
     title: '10+',
     description: 'Projects Completed',
@@ -31,7 +39,7 @@ const skillsData = [
   },
 ];
 
-const SkillsDataCard = () => {
+const SkillsDataCard: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-4">
       {skillsData.map((skill, index) => (
@@ -40,7 +48,6 @@ const SkillsDataCard = () => {
           title={skill.title}
           description={skill.description}
           Icon={skill.icon}
-          // color={skill.color}
         />
       ))}
     </div>

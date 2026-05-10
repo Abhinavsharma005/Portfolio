@@ -1,6 +1,19 @@
 import React from "react";
+import { IconType } from "react-icons";
 
-const SkillCard = ({ icon: Icon, title, skills, className }) => {
+interface Skill {
+  name: string;
+  color: string;
+}
+
+interface SkillCardProps {
+  icon: IconType;
+  title: string;
+  skills: Skill[];
+  className?: string;
+}
+
+const SkillCard: React.FC<SkillCardProps> = ({ icon: Icon, title, skills, className }) => {
   // Default color (from first skill)
   let mainColor = skills[0]?.color || "#3B82F6";
 
@@ -62,7 +75,7 @@ const SkillCard = ({ icon: Icon, title, skills, className }) => {
 };
 
 // Helper: lighten/darken a color
-function shadeColor(color, percent) {
+function shadeColor(color: string, percent: number): string {
   const num = parseInt(color.slice(1), 16),
     amt = Math.round(2.55 * percent),
     R = (num >> 16) + amt,

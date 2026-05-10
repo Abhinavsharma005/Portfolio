@@ -1,8 +1,20 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { FiTerminal, FiX } from 'react-icons/fi';
 
+/* ─── Types ─── */
+interface TerminalLine {
+  t: string;
+  c?: string;
+  bold?: boolean;
+  mono?: boolean;
+}
+
+interface FigletFont {
+  [key: string]: [string, string, string];
+}
+
 /* ─── ASCII Banner ─── */
-const BANNER = [
+const BANNER: string[] = [
   " █████╗ ██████╗ ██╗  ██╗██╗███╗  ██╗ █████╗ ██╗   ██╗",
   "██╔══██╗██╔══██╗██║  ██║██║████╗ ██║██╔══██╗██║   ██║",
   "███████║██████╔╝███████║██║██╔██╗██║███████║██║   ██║",
@@ -15,7 +27,7 @@ const BANNER = [
 
 
 /* ─── Figlet font (Calvin S / 3-line) ─── */
-const FIGLET_FONT = {
+const FIGLET_FONT: FigletFont = {
   ' ': ['   ','   ','   '],
   'A': ['╔═╗','╠═╣','╩ ╩'],  'B': ['╔╗ ','╠╩╗','╚═╝'],
   'C': ['╔═╗','║  ','╚═╝'],  'D': ['╔╦╗',' ║║',' ╩╝'],
@@ -39,7 +51,7 @@ const FIGLET_FONT = {
   '.': ['  ',' ','●'], '-': ['   ','═══','   '],
 };
 
-function makeFiglet(text) {
+function makeFiglet(text: string): TerminalLine[] {
   const chars = text.toUpperCase().split('');
   const rows = ['  ', '  ', '  '];
   chars.forEach(ch => {
@@ -50,7 +62,7 @@ function makeFiglet(text) {
 }
 
 /* ─── Commands ─── */
-const COMMANDS = {
+const COMMANDS: Record<string, () => TerminalLine[]> = {
   help: () => [
     { t: '┌─ Available Commands ───────────────────────────┐', c: '#54c8fe' },
     { t: '│  whoami          about me                      │', c: '#94A3B8' },
@@ -102,7 +114,6 @@ const COMMANDS = {
     { t: '  └─ Status   ● Available for Remote Work', c: '#22d3ee' },
   ],
   socials: () => {
-    setTimeout(() => {}, 0);
     return [
       { t: '  Social Links', c: '#54c8fe', bold: true },
       { t: '  ├─ GitHub    → github.com/Abhinavsharma005', c: '#e2e8f0' },
@@ -127,7 +138,7 @@ const COMMANDS = {
   },
   neofetch: () => {
     const now = new Date();
-    const uptime = `${Math.floor((now - new Date('2024-01-01')) / 86400000)} days coding`;
+    const uptime = `${Math.floor((now.getTime() - new Date('2024-01-01').getTime()) / 86400000)} days coding`;
     return [
       { t: '  abhinav@portfolio', c: '#54c8fe', bold: true },
       { t: '  ──────────────────────────────', c: '#1e293b' },
@@ -147,7 +158,7 @@ const COMMANDS = {
 
 const PROMPT = 'abhinav@portfolio:~$';
 
-const BOOT_LINES = [
+const BOOT_LINES: TerminalLine[] = [
   ...BANNER.map(b => ({ t: b, c: '#54c8fe', bold: b.includes('Terminal') })),
   { t: '', c: '' },
   { t: `  Type  "help"  to see available commands.`, c: '#64748b' },
@@ -155,17 +166,17 @@ const BOOT_LINES = [
 ];
 
 /* ─── Main Component ─── */
-const FloatingTerminal = () => {
-  const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [lines, setLines] = useState(BOOT_LINES);
-  const [input, setInput] = useState('');
-  const [cmdHistory, setCmdHistory] = useState([]);
-  const [histIdx, setHistIdx] = useState(-1);
-  const [cmdCount, setCmdCount] = useState(0);
+const FloatingTerminal: React.FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(false);
+  const [lines, setLines] = useState<TerminalLine[]>(BOOT_LINES);
+  const [input, setInput] = useState<string>('');
+  const [cmdHistory, setCmdHistory] = useState<string[]>([]);
+  const [histIdx, setHistIdx] = useState<number>(-1);
+  const [cmdCount, setCmdCount] = useState<number>(0);
 
-  const bottomRef = useRef(null);
-  const inputRef = useRef(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   /* scroll to bottom */
   useEffect(() => {
@@ -184,7 +195,7 @@ const FloatingTerminal = () => {
 
   /* ESC to close */
   useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape' && open) handleClose(); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape' && open) handleClose(); };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [open]);
@@ -194,12 +205,12 @@ const FloatingTerminal = () => {
     setTimeout(() => setOpen(false), 280);
   };
 
-  const runCommand = useCallback((raw) => {
+  const runCommand = useCallback((raw: string) => {
     const trimmed = raw.trim();
     const parts = trimmed.split(/\s+/);
     const cmd = parts[0].toLowerCase();
     const args = parts.slice(1).join(' ');
-    const promptLine = { t: `${PROMPT} ${raw}`, c: '#a5f3fc', mono: true };
+    const promptLine: TerminalLine = { t: `${PROMPT} ${raw}`, c: '#a5f3fc', mono: true };
 
     if (!trimmed) { setLines(p => [...p, promptLine, { t: '', c: '' }]); return; }
 
@@ -228,7 +239,7 @@ const FloatingTerminal = () => {
     setHistIdx(-1);
   }, []);
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') { runCommand(input); setInput(''); }
     else if (e.key === 'ArrowUp') {
       e.preventDefault();
@@ -366,8 +377,8 @@ const FloatingTerminal = () => {
               <button
                 onClick={handleClose}
                 style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#4a5568', padding: '2px 4px', display: 'flex', alignItems: 'center', borderRadius: '4px', transition: 'color 0.15s' }}
-                onMouseEnter={e => e.currentTarget.style.color = '#94a3b8'}
-                onMouseLeave={e => e.currentTarget.style.color = '#4a5568'}
+                onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.color = '#94a3b8'}
+                onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.color = '#4a5568'}
                 aria-label="Close terminal"
               >
                 <FiX size={14} />

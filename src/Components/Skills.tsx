@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import SkillCard from "./SkillCard";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   FaCode,
   FaDatabase,
@@ -10,13 +10,24 @@ import {
   FaMobileAlt,
   FaBrain,
 } from "react-icons/fa";
+import { IconType } from "react-icons";
 
-const Skills = () => {
-  const skillData = [
+interface SkillItem {
+  name: string;
+  color: string;
+}
+
+interface SkillData {
+  icon: IconType;
+  title: string;
+  skills: SkillItem[];
+}
+
+const Skills: React.FC = () => {
+  const skillData: SkillData[] = [
     {
       icon: FaCode,
       title: "Languages",
-      iconColor: "#61DAFB",
       skills: [
         { name: "HTML", color: "#E34F26" },
         { name: "CSS", color: "#3b9dd7" },
@@ -28,7 +39,6 @@ const Skills = () => {
     {
       icon: FaPalette,
       title: "Frameworks & Libraries",
-      iconColor: "#61DAFB",
       skills: [
         { name: "React.js", color: "#61DAFB" },
         { name: "Next.js", color: "#e4e4e4" },
@@ -39,7 +49,6 @@ const Skills = () => {
     {
       icon: FaDatabase,
       title: "Backend & Database",
-      iconColor: "#FF69B4",
       skills: [
         { name: "Node.js", color: "#7fc728" },
         { name: "Express.js", color: "#999999" },
@@ -52,7 +61,6 @@ const Skills = () => {
     {
       icon: FaTools,
       title: "DevOps & Tools",
-      iconColor: "#FFD700",
       skills: [
         { name: "Git", color: "#FFA000" },
         { name: "GitHub", color: "#EEF7FF" },
@@ -68,7 +76,6 @@ const Skills = () => {
     {
       icon: FaBrain,
       title: "wait..Data Science & ML",
-      iconColor: "#61DAFB",
       skills: [
         { name: "Python", color: "#3776AB" },
         { name: "TensorFlow", color: "#FF6F00" },
@@ -80,7 +87,6 @@ const Skills = () => {
     {
       icon: FaMobileAlt,
       title: "Mobile Development",
-      iconColor: "#61DAFB",
       skills: [
         { name: "Android Studio", color: "#3DDC84" },
         { name: "React Native (expo)", color: "#61DAFB" },
@@ -90,7 +96,7 @@ const Skills = () => {
     },
   ];
 
-  const exploring = [
+  const exploring: string[] = [
     "Ai/Ml",
     "Matplotlib",
     "TensorFlow",
@@ -104,7 +110,7 @@ const Skills = () => {
     "Generative AI",
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -114,7 +120,7 @@ const Skills = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
@@ -161,7 +167,6 @@ const Skills = () => {
             <SkillCard
               icon={data.icon}
               title={data.title}
-              iconColor={data.iconColor}
               skills={data.skills}
               className="bg-[#11141d]/80 border border-[#1b1e2a] backdrop-blur-md h-full w-full max-w-none"
             />

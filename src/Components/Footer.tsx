@@ -2,7 +2,12 @@ import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { MdOutlineArrowUpward } from 'react-icons/md';
 
-const Footer = ({ creatorName = "Abhinav Sharma", currentYear = 2025 }) => {
+interface FooterProps {
+  creatorName?: string;
+  currentYear?: number;
+}
+
+const Footer: React.FC<FooterProps> = ({ creatorName = "Abhinav Sharma", currentYear = 2026 }) => {
   const scrollToHome = "#home-section";
 
   return (

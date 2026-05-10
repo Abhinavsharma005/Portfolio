@@ -15,11 +15,18 @@ import Footer from './Components/Footer';
 import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiNextdotjs } from 'react-icons/si';
 import ParticlesBackground from './Components/ParticlesBackground';
-import Cursor from './Components/Cursor';
 import TargetCursor from './Components/TargetCursor';
 import FloatingTerminal from './Components/FloatingTerminal';
 
-const NavLink = ({ href, targetId, currentActive, children, onClick }) => {
+interface NavLinkProps {
+  href: string;
+  targetId: string;
+  currentActive: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}
+
+const NavLink: React.FC<NavLinkProps> = ({ href, targetId, currentActive, children, onClick }) => {
   const isActive = currentActive === targetId;
 
   const activeClass = isActive
@@ -33,15 +40,15 @@ const NavLink = ({ href, targetId, currentActive, children, onClick }) => {
   );
 };
 
-function App() {
-  const [activeSection, setActiveSection] = useState('home-section');
-  const [menuOpen, setMenuOpen] = useState(false); // Mobile drawer state
+const App: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string>('home-section');
+  const [menuOpen, setMenuOpen] = useState<boolean>(false); // Mobile drawer state
 
   useEffect(() => {
     const sectionIds = ['home-section', 'about-section', 'skills-section', 'projects-section', 'contact-section'];
-    const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el);
+    const sections = sectionIds.map(id => document.getElementById(id)).filter((el): el is HTMLElement => el !== null);
 
-    const observerOptions = {
+    const observerOptions: IntersectionObserverInit = {
       root: null,
       rootMargin: '-50% 0px -50% 0px',
       threshold: 0,
@@ -62,7 +69,6 @@ function App() {
 
   return (
     <>
-    {/* <Cursor /> */}
     <TargetCursor targetSelector=".cursor-target, a, button, .button1" />
       <ParticlesBackground />
       <ScrollToTop />
@@ -186,10 +192,13 @@ function App() {
                           src="/office_photo.jpeg"
                           alt="Abhinav Sharma"
                           className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.style.display = 'none';
-                            e.target.parentElement.innerHTML += '<div class="text-4xl text-[#54c8fe] font-bold">AS</div>';
+                          onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                            const target = e.target as HTMLImageElement;
+                            target.onerror = null;
+                            target.style.display = 'none';
+                            if (target.parentElement) {
+                              target.parentElement.innerHTML += '<div class="text-4xl text-[#54c8fe] font-bold">AS</div>';
+                            }
                           }}
                         />
                       </div>

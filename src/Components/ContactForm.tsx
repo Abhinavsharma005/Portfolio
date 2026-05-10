@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 
-const ContactForm = () => {
-    const [formData, setFormData] = useState({
+interface FormDataState {
+    name: string;
+    email: string;
+    message: string;
+}
+
+const ContactForm: React.FC = () => {
+    const [formData, setFormData] = useState<FormDataState>({
         name: '',
         email: '',
         message: '',
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault(); 
         
         const formActionUrl = "https://formspree.io/f/xjkalpqv";
@@ -22,7 +28,7 @@ const ContactForm = () => {
             return;
         }
 
-        const form = e.target;
+        const form = e.currentTarget;
         
         fetch(formActionUrl, {
             method: form.method,
@@ -45,9 +51,7 @@ const ContactForm = () => {
         });
     };
 
- 
     return (
-      
         <div className="w-full max-w-lg p-6 bg-[#11141D] border border-[#1B2437] rounded-xl shadow-2xl">
             <form onSubmit={handleSubmit} method="POST">
                 
@@ -98,7 +102,7 @@ const ContactForm = () => {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Your message..."
-                        rows="6"
+                        rows={6}
                         className="w-full px-4 py-3 bg-[#0c121b] border border-cyan-500/50 rounded-lg text-white placeholder-[#94A3B8] 
                outline-none transition-all duration-200 input-glow-effect"
                         required

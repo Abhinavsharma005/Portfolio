@@ -1,20 +1,27 @@
 import { useEffect, useRef } from "react"
 
 export default function ParticlesBackground() {
-    const canvasRef = useRef(null);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    let canvas; 
-    let ctx;
-    let particles = [];
+    let canvas: HTMLCanvasElement | null; 
+    let ctx: CanvasRenderingContext2D | null;
+    let particles: Particle[] = [];
     const particleCount = 30;
     const colors = ["rgba(255, 255, 255, 0.7)"]; 
 
-    let animationId;
+    let animationId: number;
 
     class Particle {
+        x: number;
+        y: number;
+        radius: number;
+        color: string;
+        speedX: number;
+        speedY: number;
+
         constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
+            this.x = Math.random() * (canvas?.width || 0);
+            this.y = Math.random() * (canvas?.height || 0);
             this.radius = Math.random() * 2 + 1;
             this.color = colors[Math.floor(Math.random() * colors.length)];
             this.speedX = (Math.random() - 0.5) * 0.5;
@@ -22,6 +29,7 @@ export default function ParticlesBackground() {
         }
 
         draw() {
+            if (!ctx) return;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
             ctx.shadowBlur = 40;
@@ -34,11 +42,13 @@ export default function ParticlesBackground() {
             this.x += this.speedX;
             this.y += this.speedY;
 
-            if (this.x < 0) this.x = canvas.width;
-            if (this.x > canvas.width) this.x = 0;
+            if (canvas) {
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
 
-            if (this.y < 0) this.y = canvas.height;
-            if (this.y > canvas.height) this.y = 0; 
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0; 
+            }
 
             this.draw();
         }
@@ -52,12 +62,14 @@ export default function ParticlesBackground() {
     }
 
     function handleResize() {
+        if (!canvas) return;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         createParticles();
     }
 
     function animate() {
+        if (!canvas || !ctx) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach((p) => p.update());
         animationId = requestAnimationFrame(animate);
@@ -65,6 +77,7 @@ export default function ParticlesBackground() {
 
     useEffect(() => {
         canvas = canvasRef.current;
+        if (!canvas) return;
         ctx = canvas.getContext("2d");
 
         handleResize(); 

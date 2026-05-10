@@ -1,9 +1,8 @@
-"use client";
 import React from "react";
 import SkillsDataCard from "./SkillsDataCard";
 import { motion } from "framer-motion";
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <>
       <div className="p-3">
@@ -76,9 +75,6 @@ const About = () => {
               machine learning and AI-powered features with the web projects
               where it makes the most impact.
             </p>
-            {/* <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
-              I've expertise in Full-Stack Web development and to make <span className="text-cyan-400 font-medium">smart, scalable, </span> and <span className="text-cyan-400 font-medium"> user-focused solutions</span>, while <span className="text-cyan-400 font-medium">mobile app development</span> remains a space I explore mainly for my personal use projects/tools . Alongside this, I have a strong interest in Machine Learning and Data Science, exploring areas such as <span className="text-cyan-400 font-medium">data preprocessing, predictive analytics, and model integration</span> to create intelligent and adaptive systems.
-            </p> */}
             <br />
             <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
               I enjoy exploring{" "}

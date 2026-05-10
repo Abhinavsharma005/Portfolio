@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-
-const RotatingSkills = () => {
+const RotatingSkills: React.FC = () => {
   const skills = ["Problem Solver", "Full-Stack Web Developer", "Developing User-Friendly solutions", "UI/UX Designer","Clean Code", "Tech Enthusiast"];
-  const [displayedSkill, setDisplayedSkill] = useState('');
-  const [skillIndex, setSkillIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [displayedSkill, setDisplayedSkill] = useState<string>('');
+  const [skillIndex, setSkillIndex] = useState<number>(0);
+  const [charIndex, setCharIndex] = useState<number>(0);
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
   useEffect(() => {
-    let timeout;
+    let timeout: any;
     if (!isDeleting && charIndex <= skills[skillIndex].length) {
       timeout = setTimeout(() => {
         setDisplayedSkill(skills[skillIndex].substring(0, charIndex));
@@ -38,4 +37,4 @@ const RotatingSkills = () => {
   )
 }
 
-export default RotatingSkills
+export default RotatingSkills;

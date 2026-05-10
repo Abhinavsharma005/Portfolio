@@ -3,7 +3,18 @@ import React, { useState } from 'react';
 import { FaCodeBranch, FaExternalLinkAlt, FaVideo, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const projectsData = [
+interface Project {
+    id: number;
+    category: string;
+    title: string;
+    description: string;
+    thumbnailUrl: string;
+    techTags: string[];
+    liveDemo?: string;
+    githubRepo?: string;
+}
+
+const projectsData: Project[] = [
     {
         id: 1,
         category: "Full-Stack",
@@ -92,7 +103,11 @@ const projectsData = [
 
 const categories = ["All", "Web", "Full-Stack", "AI/ML", "App Dev"];
 
-const ProjectCard = ({ project }) => {
+interface ProjectCardProps {
+    project: Project;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     const isAppDev = project.category === 'App Dev';
 
     const primaryLinkText = isAppDev ? 'Demo Video' : 'Live Demo';
@@ -165,10 +180,10 @@ const ProjectCard = ({ project }) => {
     );
 };
 
-const Projects = () => {
+const Projects: React.FC = () => {
     const PROJECT_LIMIT = 6;
-    const [activeCategory, setActiveCategory] = useState("All");
-    const [showAll, setShowAll] = useState(false); // State for 'View More/Less'
+    const [activeCategory, setActiveCategory] = useState<string>("All");
+    const [showAll, setShowAll] = useState<boolean>(false); // State for 'View More/Less'
 
     // Filter projects based on the active category
     const filteredProjects = activeCategory === "All"
@@ -184,7 +199,7 @@ const Projects = () => {
     const showViewMoreButton = activeCategory === "All" && projectsData.length > PROJECT_LIMIT;
     const buttonText = showAll ? "View Less" : "View More";
 
-    const handleCategoryChange = (category) => {
+    const handleCategoryChange = (category: string) => {
         setActiveCategory(category);
 
         if (category === "All") {

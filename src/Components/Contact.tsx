@@ -1,12 +1,22 @@
 "use client"
-import React, { useState } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaClock, FaLink, FaPaperPlane, FaExternalLinkAlt } from 'react-icons/fa';
+import React from 'react';
+import { FaEnvelope, FaMapMarkerAlt, FaClock, FaExternalLinkAlt } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import ContactForm from './ContactForm';
 import { motion } from 'framer-motion';
 
+interface ContactCardProps {
+    icon?: IconType;
+    title: string;
+    content?: string;
+    subContent?: string;
+    iconStyle?: string;
+    href?: string;
+    children?: React.ReactNode;
+}
 
-const ContactCard = ({ icon: Icon, title, content, subContent, iconStyle, href, children }) => (
+const ContactCard: React.FC<ContactCardProps> = ({ icon: Icon, title, content, subContent, iconStyle, href, children }) => (
     <motion.div
         className="bg-[#11141D] border border-[#1B2437] rounded-xl p-6 shadow-2xl transition-all duration-300 hover:border-cyan-500/50 hover:shadow-cyan-500/10"
         initial={{ opacity: 0, x: -50 }}
@@ -45,7 +55,7 @@ const ContactCard = ({ icon: Icon, title, content, subContent, iconStyle, href, 
     </motion.div>
 );
 
-const AvatarSection = () => (
+const AvatarSection: React.FC = () => (
     <motion.div
         className="flex flex-col items-center justify-center py-8 mb-4"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -62,7 +72,7 @@ const AvatarSection = () => (
             />
         </div>
 
-        {/* LinkedIn and GitHub Buttons - This JSX is correct */}
+        {/* LinkedIn and GitHub Buttons */}
         <div className="flex gap-6">
             <a
                 href="https://linkedin.com/in/abhinav-sharma-314319327"
@@ -85,10 +95,17 @@ const AvatarSection = () => (
     </motion.div>
 );
 
+interface ContactDataItem {
+    icon: IconType;
+    title: string;
+    content: string;
+    subContent: string;
+    iconStyle: string;
+    href?: string;
+}
 
-
-const Contact = () => {
-    const contactData = [
+const Contact: React.FC = () => {
+    const contactData: ContactDataItem[] = [
         {
             icon: FaEnvelope,
             title: "Email",
@@ -155,9 +172,7 @@ const Contact = () => {
                                     subContent={item.subContent}
                                     iconStyle={item.iconStyle}
                                     href={item.href}
-                                >
-                                    {item.children}
-                                </ContactCard>
+                                />
                             ))}
                         </div>
                     </div>

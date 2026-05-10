@@ -1,9 +1,13 @@
 import React from "react";
 
-const ScrollButton = ({ targetId }) => {
+interface ScrollButtonProps {
+  targetId: string;
+}
+
+const ScrollButton: React.FC<ScrollButtonProps> = ({ targetId }) => {
   const handleScroll = () => {
     const targetElement = document.getElementById(targetId);
-    const navbar = document.querySelector(".fixed-navbar");
+    const navbar = document.querySelector(".fixed-navbar") as HTMLElement | null;
 
     if (targetElement && navbar) {
       const navbarHeight = navbar.offsetHeight;
@@ -33,7 +37,7 @@ const ScrollButton = ({ targetId }) => {
       <p className="text-slate-400 mt-3 text-sm">Scroll Down</p>
 
       {/* Animations */}
-      <style jsx>{`
+      <style>{`
         /* Inner blue bar (scroll) animation */
         @keyframes scroll {
           0% {
