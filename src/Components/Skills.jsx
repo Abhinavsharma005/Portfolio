@@ -44,6 +44,7 @@ const Skills = () => {
         { name: "Node.js", color: "#7fc728" },
         { name: "Express.js", color: "#999999" },
         { name: "MongoDB", color: "#50b33f" },
+        { name: "Redis", color: "#c02e2a" },
         { name: "PostgreSQL", color: "#336791" },
         { name: "Firebase", color: "#FFA000" },
       ],

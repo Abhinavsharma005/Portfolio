@@ -1,12 +1,12 @@
 "use client"
 import React, { useState } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaClock, FaLink, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaClock, FaLink, FaPaperPlane, FaExternalLinkAlt } from 'react-icons/fa';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import ContactForm from './ContactForm';
 import { motion } from 'framer-motion';
 
 
-const ContactCard = ({ icon: Icon, title, content, subContent, iconStyle, children }) => (
+const ContactCard = ({ icon: Icon, title, content, subContent, iconStyle, href, children }) => (
     <motion.div
         className="bg-[#11141D] border border-[#1B2437] rounded-xl p-6 shadow-2xl transition-all duration-300 hover:border-cyan-500/50 hover:shadow-cyan-500/10"
         initial={{ opacity: 0, x: -50 }}
@@ -23,9 +23,16 @@ const ContactCard = ({ icon: Icon, title, content, subContent, iconStyle, childr
             <div>
                 <h3 className="text-xl font-semibold text-white mb-1">{title}</h3>
                 {content && (
-                    <p className="text-lg text-cyan-400 font-medium mb-1">
-                        {content}
-                    </p>
+                    href ? (
+                        <a href={href} target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-400 font-medium mb-1 flex items-center group w-fit hover:text-cyan-300 transition-colors">
+                            <span>{content}</span>
+                            <FaExternalLinkAlt className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-4 h-4" />
+                        </a>
+                    ) : (
+                        <p className="text-lg text-cyan-400 font-medium mb-1">
+                            {content}
+                        </p>
+                    )
                 )}
                 {subContent && (
                     <p className="text-[#94A3B8] text-sm">
@@ -88,6 +95,7 @@ const Contact = () => {
             content: "sharmaabhinav1013@gmail.com",
             subContent: "Send me an email anytime",
             iconStyle: "bg-blue-600/20 text-blue-400",
+            href: "https://mail.google.com/mail/?view=cm&fs=1&to=sharmaabhinav1013@gmail.com",
         },
         {
             icon: FaMapMarkerAlt,
@@ -146,6 +154,7 @@ const Contact = () => {
                                     content={item.content}
                                     subContent={item.subContent}
                                     iconStyle={item.iconStyle}
+                                    href={item.href}
                                 >
                                     {item.children}
                                 </ContactCard>
