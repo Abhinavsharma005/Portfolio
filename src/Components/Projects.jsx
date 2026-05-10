@@ -98,7 +98,7 @@ const ProjectCard = ({ project }) => {
     const primaryLinkText = isAppDev ? 'Demo Video' : 'Live Demo';
     const PrimaryLinkIcon = isAppDev ? FaVideo : FaExternalLinkAlt;
 
-    const primaryLinkStyle = 'text-white bg-indigo-600 hover:bg-indigo-700';
+    const primaryLinkStyle = 'text-white bg-[#4fa0fc] hover:bg-[#4fa0fc]/80';
 
     return (
         <motion.div
@@ -224,7 +224,7 @@ const Projects = () => {
                             className={`
                                 px-6 py-2 rounded-full font-medium transition-all duration-300
                                 ${activeCategory === category
-                                    ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/50"
+                                    ? "bg-[#11a1ef] text-white shadow-lg shadow-indigo-600/50"
                                     : "bg-[#1B2437] text-[#94A3B8] hover:bg-[#253046]"
                                 }
                             `}
