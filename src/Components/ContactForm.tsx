@@ -52,12 +52,12 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <div className="w-full max-w-lg p-6 bg-[#11141D] border border-[#1B2437] rounded-xl shadow-2xl">
+        <div className="w-full max-w-[480px] p-6 bg-[#11141D]/40 backdrop-blur-md border border-[#1B2437]/60 rounded-xl shadow-2xl">
             <form onSubmit={handleSubmit} method="POST">
                 
                 {/* Name Input */}
                 <div className="text-left mb-4">
-                    <label htmlFor="name" className="block text-white text-base font-medium mb-2">
+                    <label htmlFor="name" className="block text-white text-sm font-medium mb-1.5">
                         Name
                     </label>
                     <input
@@ -67,7 +67,7 @@ const ContactForm: React.FC = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Your name"
-                        className="w-full px-4 py-3 bg-[#0c121b] border border-cyan-500/50 rounded-lg text-white placeholder-[#94A3B8] 
+                        className="w-full px-3.5 py-3 bg-[#0c121b]/50 backdrop-blur-sm border border-[#1B2437]/60 rounded-lg text-white placeholder-[#94A3B8] text-sm
                outline-none transition-all duration-200 input-glow-effect"
                         required
                     />
@@ -75,7 +75,7 @@ const ContactForm: React.FC = () => {
 
                 {/* Email Input */}
                 <div className="text-left mb-4">
-                    <label htmlFor="email" className="block text-white text-base font-medium mb-2">
+                    <label htmlFor="email" className="block text-white text-sm font-medium mb-1.5">
                         Email
                     </label>
                     <input
@@ -85,15 +85,15 @@ const ContactForm: React.FC = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="your.email@example.com"
-                        className="w-full px-4 py-3 bg-[#0c121b] border border-cyan-500/50 rounded-lg text-white placeholder-[#94A3B8] 
+                        className="w-full px-3.5 py-3 bg-[#0c121b]/50 backdrop-blur-sm border border-[#1B2437]/60 rounded-lg text-white placeholder-[#94A3B8] text-sm
                outline-none transition-all duration-200 input-glow-effect"
                         required
                     />
                 </div>
 
                 {/* Message Input (Textarea) */}
-                <div className="text-left mb-6">
-                    <label htmlFor="message" className="block text-white text-base font-medium mb-2">
+                <div className="text-left mb-5">
+                    <label htmlFor="message" className="block text-white text-sm font-medium mb-1.5">
                         Message
                     </label>
                     <textarea
@@ -102,8 +102,8 @@ const ContactForm: React.FC = () => {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Your message..."
-                        rows={6}
-                        className="w-full px-4 py-3 bg-[#0c121b] border border-cyan-500/50 rounded-lg text-white placeholder-[#94A3B8] 
+                        rows={5}
+                        className="w-full px-3.5 py-3 bg-[#0c121b]/50 backdrop-blur-sm border border-[#1B2437]/60 rounded-lg text-white placeholder-[#94A3B8] text-sm
                outline-none transition-all duration-200 input-glow-effect"
                         required
                     />
@@ -111,7 +111,7 @@ const ContactForm: React.FC = () => {
 
                 <button
                     type="submit"
-                    className="w-full flex items-center justify-center py-3 px-4 bg-cyan-400 text-black font-semibold rounded-lg shadow-md hover:bg-cyan-300 transition-all duration-300"
+                    className="w-full flex items-center justify-center py-2.5 px-4 bg-cyan-400 text-black font-semibold rounded-lg shadow-md hover:bg-cyan-300 transition-all duration-300 text-sm"
                 >
                     <FaPaperPlane className="w-4 h-4 mr-2" /> Send Message
                 </button>

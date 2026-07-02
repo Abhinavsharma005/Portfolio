@@ -1,137 +1,13 @@
 "use client"
 import React from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaClock, FaExternalLinkAlt } from 'react-icons/fa';
-import { IconType } from 'react-icons';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FiGithub, FiLinkedin, FiPhone } from 'react-icons/fi';
 import ContactForm from './ContactForm';
 import { motion } from 'framer-motion';
 
-interface ContactCardProps {
-    icon?: IconType;
-    title: string;
-    content?: string;
-    subContent?: string;
-    iconStyle?: string;
-    href?: string;
-    children?: React.ReactNode;
-}
-
-const ContactCard: React.FC<ContactCardProps> = ({ icon: Icon, title, content, subContent, iconStyle, href, children }) => (
-    <motion.div
-        className="bg-[#11141D] border border-[#1B2437] rounded-xl p-6 shadow-2xl transition-all duration-300 hover:border-cyan-500/50 hover:shadow-cyan-500/10"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-    >
-        <div className="flex items-start gap-4">
-            {Icon && (
-                <div className={`p-3 rounded-full flex-shrink-0 ${iconStyle}`}>
-                    <Icon className="w-5 h-5" />
-                </div>
-            )}
-            <div>
-                <h3 className="text-xl font-semibold text-white mb-1">{title}</h3>
-                {content && (
-                    href ? (
-                        <a href={href} target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-400 font-medium mb-1 flex items-center group w-fit hover:text-cyan-300 transition-colors">
-                            <span>{content}</span>
-                            <FaExternalLinkAlt className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-4 h-4" />
-                        </a>
-                    ) : (
-                        <p className="text-lg text-cyan-400 font-medium mb-1">
-                            {content}
-                        </p>
-                    )
-                )}
-                {subContent && (
-                    <p className="text-[#94A3B8] text-sm">
-                        {subContent}
-                    </p>
-                )}
-                {children && <div className="mt-4">{children}</div>}
-            </div>
-        </div>
-    </motion.div>
-);
-
-const AvatarSection: React.FC = () => (
-    <motion.div
-        className="flex flex-col items-center justify-center py-8 mb-4"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-    >
-        {/* Circular Avatar */}
-        <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-500 shadow-xl mb-6">
-            <img
-                src="/blue_shirt_4.png"
-                alt="Profile Avatar"
-                className="w-50 h-60 object-cover"
-            />
-        </div>
-
-        {/* LinkedIn and GitHub Buttons */}
-        <div className="flex gap-6">
-            <a
-                href="https://linkedin.com/in/abhinav-sharma-314319327"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#1B2437] border border-[#374151] rounded-xl p-4 shadow-xl text-white transition-all duration-300 hover:bg-[#253046] hover:text-cyan-400"
-            >
-                <FiLinkedin className="w-6 h-6" />
-            </a>
-
-            <a
-                href="https://github.com/Abhinavsharma005"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#1B2437] border border-[#374151] rounded-xl p-4 shadow-xl text-white transition-all duration-300 hover:bg-[#253046] hover:text-cyan-400"
-            >
-                <FiGithub className="w-6 h-6" />
-            </a>
-        </div>
-    </motion.div>
-);
-
-interface ContactDataItem {
-    icon: IconType;
-    title: string;
-    content: string;
-    subContent: string;
-    iconStyle: string;
-    href?: string;
-}
-
 const Contact: React.FC = () => {
-    const contactData: ContactDataItem[] = [
-        {
-            icon: FaEnvelope,
-            title: "Email",
-            content: "sharmaabhinav1013@gmail.com",
-            subContent: "Send me an email anytime",
-            iconStyle: "bg-blue-600/20 text-blue-400",
-            href: "https://mail.google.com/mail/?view=cm&fs=1&to=sharmaabhinav1013@gmail.com",
-        },
-        {
-            icon: FaMapMarkerAlt,
-            title: "Location",
-            content: "Available for Remote Work",
-            subContent: "Always open to opportunities",
-            iconStyle: "bg-pink-600/20 text-pink-400",
-        },
-        {
-            icon: FaClock,
-            title: "Response Time",
-            content: "I respond typically within 24 hours",
-            subContent: "For urgent matters, feel free to call me directly.",
-            iconStyle: "bg-green-600/20 text-green-400",
-        },
-    ];
-
     return (
-        <div className="py-20 bg-black min-h-screen text-white relative z-10" id="contact">
+        <div className="py-20 bg-transparent min-h-screen text-white relative z-10" id="contact">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
                 <div className="mb-16 max-w-3xl mx-auto text-center">
@@ -153,32 +29,136 @@ const Contact: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        I'm always open to discussing new opportunities and exciting projects—let's collaborate and create something amazing together! Whether you have a question or just want to say hi, I'll do my best to get back to you.
+                        I'm always open to discussing new projects or opportunities to be part of your vision — let's collaborate and create something amazing together! 
                     </motion.p>
                 </div>
 
-                <div className="flex justify-between flex-wrap gap-12">
+                <div className="flex justify-center flex-wrap gap-8 lg:gap-16 max-w-5xl mx-auto">
 
-                    <div className="w-full lg:w-6/12 relative z-30">
-                        <AvatarSection />
+                    <div className="w-full lg:w-[46%] relative z-30 flex flex-col items-start text-left">
+                        {/* Let's Connect Heading */}
+                        <motion.h2
+                            className="text-2xl sm:text-3xl font-bold text-white mb-2"
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
+                            Let's Connect
+                        </motion.h2>
 
-                        <div className="grid grid-cols-1 gap-8">
-                            {contactData.map((item, index) => (
-                                <ContactCard
-                                    key={index}
-                                    icon={item.icon}
-                                    title={item.title}
-                                    content={item.content}
-                                    subContent={item.subContent}
-                                    iconStyle={item.iconStyle}
-                                    href={item.href}
-                                />
-                            ))}
-                        </div>
+                        {/* Subtitle */}
+                        <motion.p
+                            className="text-sm sm:text-base text-[#94A3B8] mb-6 max-w-md"
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            Whether you have a question or want to work together, feel free to reach out!
+                        </motion.p>
+
+                        {/* Contact Info (Email and Phone) */}
+                        <motion.div
+                            className="flex flex-col gap-3 mb-6"
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="flex items-center gap-3 text-sm sm:text-base">
+                                <div className="p-2.5 rounded-full bg-blue-600/10 text-cyan-400 flex-shrink-0">
+                                    <FaEnvelope className="w-4 h-4" />
+                                </div>
+                                <a href="mailto:sharmaabhinav1013@gmail.com" className="text-[#94A3B8] hover:text-cyan-400 transition-colors font-medium">
+                                    sharmaabhinav1013@gmail.com
+                                </a>
+                            </div>
+
+                            <div className="flex items-center gap-3 text-sm sm:text-base">
+                                <div className="p-2.5 rounded-full bg-pink-600/10 text-pink-400 flex-shrink-0">
+                                    <FiPhone className="w-4 h-4" />
+                                </div>
+                                <a href="tel:+916260492536" className="text-[#94A3B8] hover:text-pink-400 transition-colors font-medium">
+                                    +91 6260492536
+                                </a>
+                            </div>
+                        </motion.div>
+
+                        {/* Social Icons */}
+                        <motion.div
+                            className="flex gap-3.5 mb-8"
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            viewport={{ once: true }}
+                        >
+                            <a
+                                href="https://linkedin.com/in/abhinav-sharma-314319327"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-[#1B2437] border border-[#374151] rounded-xl p-3 shadow-lg text-white transition-all duration-300 hover:bg-[#253046] hover:text-cyan-400"
+                            >
+                                <FiLinkedin className="w-5 h-5" />
+                            </a>
+
+                            <a
+                                href="https://github.com/Abhinavsharma005"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-[#1B2437] border border-[#374151] rounded-xl p-3 shadow-lg text-white transition-all duration-300 hover:bg-[#253046] hover:text-cyan-400"
+                            >
+                                <FiGithub className="w-5 h-5" />
+                            </a>
+                        </motion.div>
+
+                        {/* Merged Location and Response Time Card */}
+                        <motion.div
+                            className="bg-[#11141D]/40 backdrop-blur-md border border-[#1B2437]/60 rounded-xl p-5 shadow-2xl transition-all duration-300 hover:border-cyan-500/50 hover:shadow-cyan-500/10 w-full"
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="flex flex-col gap-5">
+                                {/* Location Item */}
+                                <div className="flex items-start gap-4">
+                                    <div className="p-2.5 rounded-full flex-shrink-0 bg-green-600/20 text-green-400">
+                                        <FaMapMarkerAlt className="w-4 h-4" />
+                                    </div>
+                                    <div>
+                                        <p className="text-base text-cyan-400 font-medium mb-0.5">
+                                            Available for Remote Work
+                                        </p>
+                                        <p className="text-[#94A3B8] text-xs">
+                                            Always open to opportunities
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Divider */}
+                                <div className="border-t border-[#1B2437]/60 my-0.5"></div>
+
+                                {/* Response Time Item */}
+                                <div className="flex items-start gap-4">
+                                    <div className="p-2.5 rounded-full flex-shrink-0 bg-yellow-600/20 text-yellow-400">
+                                        <FaClock className="w-4 h-4" />
+                                    </div>
+                                    <div>
+                                        <p className="text-base text-cyan-400 font-medium mb-0.5">
+                                            I respond typically within 24 hours
+                                        </p>
+                                        <p className="text-[#94A3B8] text-xs">
+                                            For urgent matters, feel free to call me directly.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
 
                     <motion.div
-                        className="w-full lg:w-5/12 mt-10 flex-shrink-0 relative z-30"
+                        className="w-full lg:w-[44%] mt-10 flex-shrink-0 relative z-30"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
