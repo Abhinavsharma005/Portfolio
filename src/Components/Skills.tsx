@@ -75,13 +75,15 @@ const Skills: React.FC = () => {
     },
     {
       icon: FaBrain,
-      title: "wait..Data Science & ML",
+      title: "Data Science & ML",
       skills: [
         { name: "Python", color: "#3776AB" },
-        { name: "TensorFlow", color: "#FF6F00" },
+        // { name: "TensorFlow", color: "#FF6F00" },
         { name: "NumPy", color: "#4b73c9" },
         { name: "Pandas", color: "#160358" },
-        { name: "Matplotlib", color: "#11557C" },
+        { name: "Matplotlib", color: "#F7A76C" },
+        { name: "Seaborn", color: "#5EA5C5" },
+        { name: "Tensorflow", color: "#EEB738" },
       ],
     },
     {
