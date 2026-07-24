@@ -58,13 +58,13 @@ function makeFiglet(text: string): TerminalLine[] {
     const g = FIGLET_FONT[ch] || FIGLET_FONT[' '];
     for (let r = 0; r < 3; r++) rows[r] += (g[r] || '   ') + ' ';
   });
-  return rows.map(r => ({ t: r, c: '#54c8fe' }));
+  return rows.map(r => ({ t: r, c: '#00EEFF' }));
 }
 
 /* ─── Commands ─── */
 const COMMANDS: Record<string, () => TerminalLine[]> = {
   help: () => [
-    { t: '┌─ Available Commands ───────────────────────────┐', c: '#54c8fe' },
+    { t: '┌─ Available Commands ───────────────────────────┐', c: '#00EEFF' },
     { t: '│  whoami          about me                      │', c: '#94A3B8' },
     { t: '│  skills          tech stack & expertise        │', c: '#94A3B8' },
     { t: '│  projects        featured projects             │', c: '#94A3B8' },
@@ -75,17 +75,17 @@ const COMMANDS: Record<string, () => TerminalLine[]> = {
     { t: '│  neofetch        portfolio system stats        │', c: '#94A3B8' },
     { t: '│  figlet [text]   generate ASCII art            │', c: '#94A3B8' },
     { t: '│  clear           clear terminal                │', c: '#94A3B8' },
-    { t: '└────────────────────────────────────────────────┘', c: '#54c8fe' },
+    { t: '└────────────────────────────────────────────────┘', c: '#00EEFF' },
   ],
   whoami: () => [
-    { t: '  Abhinav Sharma', c: '#54c8fe', bold: true },
+    { t: '  Abhinav Sharma', c: '#00EEFF', bold: true },
     { t: '  ├─ IT Undergrad @ UIT-RGPV Bhopal', c: '#e2e8f0' },
     { t: '  ├─ Full-Stack Developer', c: '#e2e8f0' },
     { t: '  ├─ ML Explorer  (TensorFlow, NumPy)', c: '#e2e8f0' },
     { t: '  └─ Building scalable apps & AI systems', c: '#64748b' },
   ],
   skills: () => [
-    { t: '  Tech Stack', c: '#54c8fe', bold: true },
+    { t: '  Tech Stack', c: '#00EEFF', bold: true },
     { t: '  ├─ Languages   JS · TS · Python · C++', c: '#e2e8f0' },
     { t: '  ├─ Frontend    React · Next.js · TailwindCSS', c: '#e2e8f0' },
     { t: '  ├─ Backend     Node · Express · MongoDB · Redis', c: '#e2e8f0' },
@@ -94,7 +94,7 @@ const COMMANDS: Record<string, () => TerminalLine[]> = {
     { t: '  └─ AI/ML       TensorFlow · NumPy · Pandas', c: '#64748b' },
   ],
   projects: () => [
-    { t: '  Featured Projects', c: '#54c8fe', bold: true },
+    { t: '  Featured Projects', c: '#00EEFF', bold: true },
     { t: '  ├─ [1] EduStream    Live Teaching Platform', c: '#e2e8f0' },
     { t: '  │       Next.js · Redis · WebRTC · Socket.IO', c: '#64748b' },
     { t: '  ├─ [2] Shorty       URL Shortener', c: '#e2e8f0' },
@@ -107,7 +107,7 @@ const COMMANDS: Record<string, () => TerminalLine[]> = {
     { t: '  → Scroll to #projects to see all  ↓', c: '#22d3ee' },
   ],
   contact: () => [
-    { t: '  Contact', c: '#54c8fe', bold: true },
+    { t: '  Contact', c: '#00EEFF', bold: true },
     { t: '  ├─ Email    sharmaabhinav1013@gmail.com', c: '#e2e8f0' },
     { t: '  ├─ GitHub   github.com/Abhinavsharma005', c: '#e2e8f0' },
     { t: '  ├─ LinkedIn linkedin.com/in/abhinav-sharma-314319327', c: '#e2e8f0' },
@@ -115,7 +115,7 @@ const COMMANDS: Record<string, () => TerminalLine[]> = {
   ],
   socials: () => {
     return [
-      { t: '  Social Links', c: '#54c8fe', bold: true },
+      { t: '  Social Links', c: '#00EEFF', bold: true },
       { t: '  ├─ GitHub    → github.com/Abhinavsharma005', c: '#e2e8f0' },
       { t: '  ├─ LinkedIn  → linkedin.com/in/abhinav-sharma-314319327', c: '#e2e8f0' },
       { t: '  └─ Gmail     → sharmaabhinav1013@gmail.com', c: '#e2e8f0' },
@@ -126,13 +126,13 @@ const COMMANDS: Record<string, () => TerminalLine[]> = {
   github: () => {
     setTimeout(() => window.open('https://github.com/Abhinavsharma005', '_blank'), 300);
     return [
-      { t: '  → Opening github.com/Abhinavsharma005 ...', c: '#54c8fe' },
+      { t: '  → Opening github.com/Abhinavsharma005 ...', c: '#00EEFF' },
     ];
   },
   date: () => {
     const now = new Date();
     return [
-      { t: `  ● ${now.toDateString()}`, c: '#54c8fe' },
+      { t: `  ● ${now.toDateString()}`, c: '#00EEFF' },
       { t: `    ${now.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' })} IST`, c: '#e2e8f0' },
     ];
   },
@@ -140,18 +140,18 @@ const COMMANDS: Record<string, () => TerminalLine[]> = {
     const now = new Date();
     const uptime = `${Math.floor((now.getTime() - new Date('2024-01-01').getTime()) / 86400000)} days coding`;
     return [
-      { t: '  abhinav@portfolio', c: '#54c8fe', bold: true },
+      { t: '  abhinav@portfolio', c: '#00EEFF', bold: true },
       { t: '  ──────────────────────────────', c: '#1e293b' },
       { t: '  OS         Windows 11 (Dev Mode)', c: '#e2e8f0' },
       { t: '  Host       Abhinav-Sharma-Portfolio', c: '#e2e8f0' },
       { t: `  Uptime     ${uptime}`, c: '#e2e8f0' },
       { t: '  Shell      portfolio-terminal v1.0', c: '#e2e8f0' },
-      { t: '  Theme      Cyber Dark  ■ #54c8fe', c: '#54c8fe' },
+      { t: '  Theme      Cyber Dark  ■ #00EEFF', c: '#00EEFF' },
       { t: '  Stack      React · Node.js · MongoDB', c: '#e2e8f0' },
       { t: '  Location   Bhopal, Madhya Pradesh, IN', c: '#e2e8f0' },
       { t: '  Status     ● Open to opportunities', c: '#22d3ee' },
       { t: '  ──────────────────────────────', c: '#1e293b' },
-      { t: '  ■■■■ ░░░░ ░░░░ ■■■■ ░░░░ ■■■■', c: '#54c8fe' },
+      { t: '  ■■■■ ░░░░ ░░░░ ■■■■ ░░░░ ■■■■', c: '#00EEFF' },
     ];
   },
 };
@@ -159,7 +159,7 @@ const COMMANDS: Record<string, () => TerminalLine[]> = {
 const PROMPT = 'abhinav@portfolio:~$';
 
 const BOOT_LINES: TerminalLine[] = [
-  ...BANNER.map(b => ({ t: b, c: '#54c8fe', bold: b.includes('Terminal') })),
+  ...BANNER.map(b => ({ t: b, c: '#00EEFF', bold: b.includes('Terminal') })),
   { t: '', c: '' },
   { t: `  Type  "help"  to see available commands.`, c: '#64748b' },
   { t: '', c: '' },
@@ -282,22 +282,22 @@ const FloatingTerminal: React.FC = () => {
           gap: '6px',
           padding: '16px 9px',
           background: 'rgba(8, 11, 22, 0.92)',
-          border: '1px solid rgba(84,200,254,0.22)',
+          border: '1px solid rgba(0,238,255,0.22)',
           borderRight: 'none',
           borderRadius: '10px 0 0 10px',
           cursor: 'pointer',
           backdropFilter: 'blur(14px)',
-          boxShadow: '-3px 0 28px rgba(84,200,254,0.1)',
+          boxShadow: '-3px 0 28px rgba(0,238,255,0.1)',
           transition: 'all 0.2s ease',
           userSelect: 'none',
         }}
         className="terminal-side-tab"
       >
-        <FiTerminal style={{ color: '#54c8fe', fontSize: '15px' }} />
+        <FiTerminal style={{ color: '#00EEFF', fontSize: '15px' }} />
         <span style={{
           writingMode: 'vertical-rl',
           textOrientation: 'mixed',
-          color: '#54c8fe',
+          color: '#00EEFF',
           fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
           fontSize: '10px',
           letterSpacing: '0.12em',
@@ -331,10 +331,10 @@ const FloatingTerminal: React.FC = () => {
               borderRadius: '12px',
               overflow: 'hidden',
               background: '#0d1117',
-              border: '1px solid rgba(84,200,254,0.18)',
+              border: '1px solid rgba(0,238,255,0.18)',
               boxShadow: `
-                0 0 0 1px rgba(84,200,254,0.05),
-                0 0 60px rgba(84,200,254,0.1),
+                0 0 0 1px rgba(0,238,255,0.05),
+                0 0 60px rgba(0,238,255,0.1),
                 0 40px 100px rgba(0,0,0,0.75)
               `,
               transform: visible ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(24px)',
@@ -350,7 +350,7 @@ const FloatingTerminal: React.FC = () => {
               alignItems: 'center',
               padding: '11px 16px',
               background: '#161b22',
-              borderBottom: '1px solid rgba(84,200,254,0.09)',
+              borderBottom: '1px solid rgba(0,238,255,0.09)',
               userSelect: 'none',
               gap: '12px',
             }}>
@@ -367,8 +367,8 @@ const FloatingTerminal: React.FC = () => {
 
               {/* Title */}
               <div style={{ flex: 1, textAlign: 'center', fontFamily: "'JetBrains Mono','Fira Code',monospace", fontSize: '12px', color: '#4a5568' }}>
-                <span style={{ color: '#54c8fe' }}>abhinav</span>
-                <span style={{ color: '#54c8fe' }}>@</span>
+                <span style={{ color: '#00EEFF' }}>abhinav</span>
+                <span style={{ color: '#00EEFF' }}>@</span>
                 <span style={{ color: '#94a3b8' }}>portfolio</span>
                 <span style={{ color: '#4a5568' }}>: ~</span>
               </div>
@@ -414,13 +414,13 @@ const FloatingTerminal: React.FC = () => {
                 alignItems: 'center',
                 padding: '10px 20px 12px',
                 background: '#0d1117',
-                borderTop: '1px solid rgba(84,200,254,0.07)',
+                borderTop: '1px solid rgba(0,238,255,0.07)',
                 gap: '6px',
                 cursor: 'text',
               }}
               onClick={() => inputRef.current?.focus()}
             >
-              <span style={{ color: '#54c8fe', fontFamily: "'JetBrains Mono','Fira Code',monospace", fontSize: '13px', userSelect: 'none', whiteSpace: 'nowrap' }}>
+              <span style={{ color: '#00EEFF', fontFamily: "'JetBrains Mono','Fira Code',monospace", fontSize: '13px', userSelect: 'none', whiteSpace: 'nowrap' }}>
                 {PROMPT}
               </span>
               <input
@@ -436,7 +436,7 @@ const FloatingTerminal: React.FC = () => {
                   color: '#e2e8f0',
                   fontFamily: "'JetBrains Mono','Fira Code',monospace",
                   fontSize: '13px',
-                  caretColor: '#54c8fe',
+                  caretColor: '#00EEFF',
                   minWidth: 0,
                 }}
                 placeholder=""
@@ -444,7 +444,7 @@ const FloatingTerminal: React.FC = () => {
                 spellCheck="false"
                 aria-label="Terminal input"
               />
-              <span style={{ color: '#54c8fe', fontSize: '14px', fontFamily: 'monospace', animation: 'term-blink 1s step-end infinite', userSelect: 'none' }}>▋</span>
+              <span style={{ color: '#00EEFF', fontSize: '14px', fontFamily: 'monospace', animation: 'term-blink 1s step-end infinite', userSelect: 'none' }}>▋</span>
             </div>
 
             {/* ── Status Bar ── */}
@@ -454,7 +454,7 @@ const FloatingTerminal: React.FC = () => {
               justifyContent: 'space-between',
               padding: '5px 14px',
               background: '#161b22',
-              borderTop: '1px solid rgba(84,200,254,0.08)',
+              borderTop: '1px solid rgba(0,238,255,0.08)',
               fontFamily: "'JetBrains Mono','Fira Code',monospace",
               fontSize: '11px',
               userSelect: 'none',
@@ -473,7 +473,7 @@ const FloatingTerminal: React.FC = () => {
                 <span style={{ color: '#374151' }}>│</span>
                 <span>UTF-8</span>
                 <span style={{ color: '#374151' }}>│</span>
-                <span style={{ color: '#54c8fe' }}>Ln {lines.length}</span>
+                <span style={{ color: '#00EEFF' }}>Ln {lines.length}</span>
               </div>
             </div>
           </div>
@@ -486,13 +486,13 @@ const FloatingTerminal: React.FC = () => {
           50%       { opacity: 0; }
         }
         .terminal-side-tab:hover {
-          background: rgba(84,200,254,0.1) !important;
-          box-shadow: -4px 0 36px rgba(84,200,254,0.2) !important;
+          background: rgba(0,238,255,0.1) !important;
+          box-shadow: -4px 0 36px rgba(0,238,255,0.2) !important;
           padding-right: 13px !important;
         }
         .terminal-side-tab:hover span,
         .terminal-side-tab:hover svg {
-          filter: drop-shadow(0 0 6px rgba(84,200,254,0.8));
+          filter: drop-shadow(0 0 6px rgba(0,238,255,0.8));
         }
       `}</style>
     </>

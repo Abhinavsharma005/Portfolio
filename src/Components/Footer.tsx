@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ creatorName = "Abhinav Sharma", current
           <a
             href={scrollToHome}
             aria-label="Scroll to top"
-            className="p-3 bg-gray-800 hover:bg-gray-700 hover:text-[#54c8fe] rounded-md transition duration-300 shadow-lg"
+            className="p-3 bg-gray-800 hover:bg-gray-700 hover:text-[#00EEFF] rounded-md transition duration-300 shadow-lg"
           >
             <MdOutlineArrowUpward className="text-xl" />
           </a>

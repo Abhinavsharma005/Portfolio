@@ -313,33 +313,33 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     >
       <div
         ref={dotRef}
-        className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#54c8fe] rounded-full -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 w-1 h-1 bg-[#00EEFF] rounded-full -translate-x-1/2 -translate-y-1/2"
         style={{ willChange: 'transform' }}
       />
       <div
         ref={innerCircleRef}
-        className="absolute top-1/2 left-1/2 w-6 h-6 border-[1px] border-[#54c8fe]/40 rounded-full -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 w-6 h-6 border-[1px] border-[#00EEFF]/40 rounded-full -translate-x-1/2 -translate-y-1/2"
         style={{ willChange: 'transform' }}
       />
       <div
         ref={circleRef}
-        className="absolute top-1/2 left-1/2 w-9 h-9 border-[3px] border-[#54c8fe]/50 bg-[#54c8fe]/15 rounded-full -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 w-9 h-9 border-[3px] border-[#00EEFF]/50 bg-[#00EEFF]/15 rounded-full -translate-x-1/2 -translate-y-1/2"
         style={{ willChange: 'transform' }}
       />
       <div
-        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#54c8fe] border-r-0 border-b-0"
+        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#00EEFF] border-r-0 border-b-0"
         style={{ willChange: 'transform' }}
       />
       <div
-        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#54c8fe] border-l-0 border-b-0"
+        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#00EEFF] border-l-0 border-b-0"
         style={{ willChange: 'transform' }}
       />
       <div
-        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#54c8fe] border-l-0 border-t-0"
+        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#00EEFF] border-l-0 border-t-0"
         style={{ willChange: 'transform' }}
       />
       <div
-        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#54c8fe] border-r-0 border-t-0"
+        className="target-cursor-corner absolute top-1/2 left-1/2 w-[14px] h-[14px] border-[3px] border-[#00EEFF] border-r-0 border-t-0"
         style={{ willChange: 'transform' }}
       />
     </div>

@@ -33,6 +33,7 @@ const Skills: React.FC = () => {
         { name: "CSS", color: "#3b9dd7" },
         { name: "JavaScript", color: "#F6F579" },
         { name: "TypeScript", color: "#3178C6" },
+        { name: "Python", color: "#3776AB" },
         { name: "C++", color: "#00599C" },
       ],
     },
@@ -77,13 +78,13 @@ const Skills: React.FC = () => {
       icon: FaBrain,
       title: "Data Science & ML",
       skills: [
-        { name: "Python", color: "#3776AB" },
-        // { name: "TensorFlow", color: "#FF6F00" },
         { name: "NumPy", color: "#4b73c9" },
-        { name: "Pandas", color: "#160358" },
+        { name: "Pandas", color: "#19227A" },
         { name: "Matplotlib", color: "#F7A76C" },
         { name: "Seaborn", color: "#5EA5C5" },
         { name: "Tensorflow", color: "#EEB738" },
+        { name: "FastApi", color: "#049789" },
+        { name: "OpenCV", color: "#FF0101" },
       ],
     },
     {
@@ -131,13 +132,14 @@ const Skills: React.FC = () => {
     <div>
       <div className="flex justify-center mt-10">
         <motion.h1
-          className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600"
+          className="text-5xl sm:text-6xl font-extrabold text-center tracking-tight flex flex-col items-center gap-1"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Skills & Expertise
+          <span className="text-[#00EEFF]">Skills</span>
+          <span className="text-white">& Expertise</span>
         </motion.h1>
       </div>
       <motion.p
@@ -192,7 +194,7 @@ const Skills: React.FC = () => {
           {exploring.map((tech, index) => (
             <div
               key={tech}
-              className="px-4 py-2 bg-[#1B2437]/70 text-cyan-400 rounded-lg animate-float"
+              className="px-4 py-2 bg-[#1B2437]/70 text-[#00EEFF] rounded-lg animate-float"
               style={{
                 animationDelay: `${index * 0.2}s`,
                 opacity: 0.8 + Math.random() * 0.2,

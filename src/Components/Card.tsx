@@ -8,12 +8,12 @@ interface CardProps {
   color?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, Icon, color }) => {
+const Card: React.FC<CardProps> = ({ title, description, Icon, color = 'text-[#00EEFF]' }) => {
   return (
-    <div className="bg-[#0b0d17] border border-slate-700 rounded-lg p-6 flex flex-col gap-4 transition-all duration-300 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20">
-      <div className={`${color || 'text-blue-400'} flex justify-center items-center`}>
+    <div className="bg-[#0b0d17] border border-slate-800 rounded-lg p-6 flex flex-col gap-4 transition-all duration-300 hover:border-[#00EEFF] hover:shadow-lg hover:shadow-[#00EEFF]/20">
+      <div className={`${color} flex justify-center items-center`}>
         {/* Pass the icon component as a prop */}
-        <Icon size={32} />
+        <Icon size={36} />
       </div>
       <h3 className="text-white text-xl font-semibold">
         {title}

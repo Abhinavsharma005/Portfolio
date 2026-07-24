@@ -9,13 +9,14 @@ const About: React.FC = () => {
         <div className="flex justify-center mb-8">
           <motion.h1
             id="about-heading"
-            className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600"
+            className="text-5xl sm:text-6xl font-extrabold text-center tracking-tight flex flex-row items-center justify-center gap-3"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            About Me
+            <span className="text-[#00EEFF]">About</span>
+            <span className="text-white">Me</span>
           </motion.h1>
         </div>
 
@@ -23,79 +24,35 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start justify-between gap-8 px-3.5">
           {/* Left side: Paragraphs */}
           <motion.div
-            className="md:w-1/2 md:mt-7 p-2"
+            className="md:w-1/2 md:mt-7 p-2 max-w-[750px]"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
+            <p className="about-text-p">
               I'm{" "}
-              <span className="text-cyan-400 font-medium">Abhinav Sharma</span>,
-              an IT undergraduate pursuing a Bachelor of Technology at the
-              University Institute of Technology, RGPV Bhopal. I’m passionate
-              about{" "}
-              <span className="text-cyan-400 font-medium">
-                software development
-              </span>
-              , problem-solving, and building{" "}
-              <span className="text-cyan-400 font-medium">
-                real-world applications
-              </span>
-              .
+              <span className="font-bold text-[#00EEFF]">Abhinav Sharma</span>,
+              a full-stack web developer and AI/ML enthusiast who enjoys turning
+              ideas into real, usable products. I specialize in building
+              performant full-stack applications and integrating machine
+              learning and AI features where they make the most impact, with a
+              focus on creating experiences that are smooth, scalable,
+              intuitive, and user-centric.
             </p>
-            <br />
-            <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
-              I've expertise in{" "}
-              <span className="text-cyan-400 font-medium">
-                Full-Stack Web development
-              </span>
-              . I also explore{" "}
-              <span className="text-cyan-400 font-medium">App Development</span>{" "}
-              mainly for my personal use
-              <span className="text-cyan-400 font-medium"> projects </span> or{" "}
-              <span className="text-cyan-400 font-medium"> tools</span>, while
-              my primary professional focus remains on{" "}
-              <span className="text-cyan-400 font-medium">web development</span>
-              . Alongside this, I have a strong interest and currently exploring
-              <span className="text-cyan-400 font-medium">
-                {" "}
-                Machine Learning
-              </span>{" "}
-              and
-              <span className="text-cyan-400 font-medium">
-                {" "}
-                Data Science
-              </span>{" "}
-              so that
-              <span className="text-cyan-400 font-medium">
-                {" "}
-                integrating
-              </span>{" "}
-              machine learning and AI-powered features with the web projects
-              where it makes the most impact.
+            <p className="about-text-p">
+              My journey began with curiosity about how technology works and
+              evolved into building complete products from scratch. Along the
+              way, I also explored app development mainly for my personal use
+              tools, while focusing primarily on full-stack web development and
+              expanding into system design, AI/ML, and data-driven
+              applications.
             </p>
-            <br />
-            <p className="text-left text-2xl text-white text-shadow-md text-shadow-white/15">
-              I enjoy exploring{" "}
-              <span className="text-cyan-400 font-medium">
-                new technologies
-              </span>{" "}
-              and
-              <span className="text-cyan-400 font-medium">
-                {" "}
-                transforming ideas
-              </span>{" "}
-              into
-              <span className="text-cyan-400 font-medium">
-                {" "}
-                practical products
-              </span>{" "}
-              that solve
-              <span className="text-cyan-400 font-medium"> real problems</span>,
-              with a strong interest in contributing to{" "}
-              <span className="text-cyan-400 font-medium">product-focused</span>{" "}
-              teams building impactful solutions.
+            <p className="about-text-p">
+              I enjoy exploring new technologies and transforming ideas into
+              practical products that solve real problems. I'm passionate about
+              contributing to product-focused teams building impactful
+              solutions.
             </p>
           </motion.div>
 

@@ -27,10 +27,10 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({ targetId }) => {
       {/* Mouse outline */}
       <div
         onClick={handleScroll}
-        className="relative w-8 h-14 border-2 border-slate-400 rounded-full flex justify-center items-start cursor-pointer hover:border-blue-400 transition-colors duration-300"
+        className="relative w-8 h-14 border-2 border-slate-400 rounded-full flex justify-center items-start cursor-pointer hover:border-[#00EEFF] transition-colors duration-300"
       >
         {/* Scroll indicator */}
-        <div className="absolute top-2 w-1.5 h-3 bg-blue-400 rounded-full animate-scroll"></div>
+        <div className="absolute top-2 w-1.5 h-3 bg-[#00EEFF] rounded-full animate-scroll"></div>
       </div>
 
       {/* Label */}

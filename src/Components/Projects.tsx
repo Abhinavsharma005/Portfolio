@@ -121,7 +121,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     const primaryLinkText = isAppDev ? 'Demo Video' : 'Live Demo';
     const PrimaryLinkIcon = isAppDev ? FaVideo : FaExternalLinkAlt;
 
-    const primaryLinkStyle = 'text-white bg-[#4fa0fc] hover:bg-[#4fa0fc]/80';
+    const primaryLinkStyle = 'text-black bg-[#00EEFF] hover:bg-[#00EEFF]/80 font-semibold';
 
     return (
         <motion.div
@@ -139,7 +139,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     alt={`${project.title} thumbnail`}
                     className="w-full h-full object-cover"
                 />
-                <span className={`absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full ${project.category === 'Full-Stack' ? 'bg-indigo-600/70 text-white' : 'bg-cyan-600/70 text-white'}`}>
+                <span className="absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full bg-cyan-600/70 text-whit shadow-md">
                     {project.category}
                 </span>
             </div>
@@ -152,7 +152,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                     {project.techTags.map(tag => (
-                        <span key={tag} className="text-xs font-medium px-3 py-1 bg-[#1B2437] text-cyan-400 rounded-full border border-cyan-400/20">
+                        <span key={tag} className="text-xs font-medium px-3 py-1 bg-[#00EEFF]/10 text-[#00EEFF] rounded-full border border-[#00EEFF]/20">
                             {tag}
                         </span>
                     ))}
@@ -177,7 +177,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                             href={project.githubRepo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center text-sm font-semibold text-[#94A3B8] border border-[#374151] hover:bg-[#1F2937] px-4 py-2 rounded-lg transition duration-200"
+                            className="flex items-center text-sm font-semibold text-[#94A3B8] border border-[#374151] hover:bg-[#1F2937] hover:text-white px-4 py-2 rounded-lg transition duration-200"
                         >
                             <FaCodeBranch className="mr-2" /> GitHub Repo
                         </a>
@@ -222,13 +222,14 @@ const Projects: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-center mb-16">
                     <motion.h1
-                        className="text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600"
+                        className="text-5xl sm:text-6xl font-extrabold text-center tracking-tight flex flex-col items-center gap-1"
                         initial={{ opacity: 0, y: -50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        Featured Projects
+                        <span className="text-[#00EEFF]">Featured</span>
+                        <span className="text-white">Projects</span>
                     </motion.h1>
                 </div>
 
@@ -247,7 +248,7 @@ const Projects: React.FC = () => {
                             className={`
                                 px-6 py-2 rounded-full font-medium transition-all duration-300
                                 ${activeCategory === category
-                                    ? "bg-[#11a1ef] text-white shadow-lg shadow-indigo-600/50"
+                                    ? "bg-[#00EEFF] text-black font-semibold shadow-lg shadow-[#00EEFF]/30"
                                     : "bg-[#1B2437] text-[#94A3B8] hover:bg-[#253046]"
                                 }
                             `}
@@ -274,20 +275,20 @@ const Projects: React.FC = () => {
                     <div className="flex flex-col items-center justify-center mt-10">
                         {showAll && (
                             <FaChevronUp
-                                className="text-[#54c8fe] text-lg mb-2 animate-bounce transition duration-300"
+                                className="text-[#00EEFF] text-lg mb-2 animate-bounce transition duration-300"
                             />
                         )}
 
                         <button
                             onClick={() => setShowAll(!showAll)}
-                            className="flex items-center text-sm font-semibold text-white bg-[#0f121a] px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:text-[#54c8fe] hover:shadow-lg hover:bg-[#1F2937]"
+                            className="flex items-center text-sm font-semibold text-white bg-[#0f121a] px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:text-[#00EEFF] hover:shadow-lg hover:bg-[#1F2937]"
                         >
                             {buttonText}
                         </button>
 
                         {!showAll && (
                             <FaChevronDown
-                                className="text-[#54c8fe] text-lg mt-2 animate-bounce transition duration-300"
+                                className="text-[#00EEFF] text-lg mt-2 animate-bounce transition duration-300"
                             />
                         )}
                     </div>

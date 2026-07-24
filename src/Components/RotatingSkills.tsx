@@ -32,7 +32,7 @@ const RotatingSkills: React.FC = () => {
 
   return (
      <div>
-      <h1 className='text-2xl font-medium text-[#54c8fe] rubik-font'>{displayedSkill}<span className="typing-cursor">|</span></h1>
+      <h1 className='text-2xl font-medium text-[#00EEFF] rubik-font'>{displayedSkill}<span className="typing-cursor">|</span></h1>
     </div>
   )
 }

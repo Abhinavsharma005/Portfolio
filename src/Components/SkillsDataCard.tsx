@@ -17,25 +17,25 @@ const skillsData: SkillDataItem[] = [
     title: '10+',
     description: 'Projects Completed',
     icon: FaRegClock,
-    color: 'text-cyan-400'
+    color: 'text-[#00EEFF]'
   },
   {
     title: 'Hackathon & Open Source',
     description: 'Worked with open source, hackathon and ready to contribute to communities',
     icon: GoPeople,
-    color: 'text-cyan-400'
+    color: 'text-[#00EEFF]'
   },
   {
     title: 'AI Integration',
     description: 'Soon..Building tools with OpenAI Gemini, and custom LLM implementations',
     icon: LuZap,
-    color: 'text-cyan-400'
+    color: 'text-[#00EEFF]'
   },
   {
     title: 'Clean Code',
     description: 'Writing modular, testable, and maintainable software',
     icon: LuCode,
-    color: 'text-cyan-400'
+    color: 'text-[#00EEFF]'
   },
 ];
 
@@ -48,6 +48,7 @@ const SkillsDataCard: React.FC = () => {
           title={skill.title}
           description={skill.description}
           Icon={skill.icon}
+          color={skill.color}
         />
       ))}
     </div>

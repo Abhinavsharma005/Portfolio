@@ -30,7 +30,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, targetId, currentActive, childr
   const isActive = currentActive === targetId;
 
   const activeClass = isActive
-    ? "text-[#54c8fe] relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-5 after:h-[2px] after:bg-blue-400 after:transition-all after:duration-300"
+    ? "text-[#00EEFF] relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-5 after:h-[2px] after:bg-[#00EEFF] after:transition-all after:duration-300"
     : "hover:text-gray-300 transition-colors duration-300";
 
   return (
@@ -79,9 +79,9 @@ const App: React.FC = () => {
         className="p-4 flex justify-between items-center fixed-navbar z-[1000] w-full"
         style={{ backgroundColor: "rgba(12, 18, 40, 0.5)", backdropFilter: "blur(18px)" }}
       >
-        <div className="flex justify-start text-2xl transition duration-300 transform hover:scale-105 font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600 animate-slide-down-logo">
-          <img src="/logo2.png" alt="Logo" className="w-9 h-9 mr-2" />
-          <span>Abhinav Sharma</span>
+        <div className="flex justify-start items-center text-2xl transition duration-300 transform hover:scale-105 font-extrabold text-[#00EEFF] animate-slide-down-logo">
+          <img src="/logo3.png" alt="Logo" className="w-10 h-10 mr-2"  />
+          <span className="text-[#00EEFF]">Abhinav Sharma</span>
         </div>
 
         {/* Desktop Nav */}
@@ -180,10 +180,10 @@ const App: React.FC = () => {
                   {/* Right Column - Profile & Badges */}
                   <div className="lg:w-[45%] relative flex justify-center items-center mt-12 lg:mt-0 animate-pop-up-3">
                     <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] rounded-full p-2"
-                      style={{ background: 'linear-gradient(145deg, rgba(84,200,254,0.1) 0%, rgba(12,18,40,0) 100%)' }}>
+                      style={{ background: 'linear-gradient(145deg, rgba(0,238,255,0.1) 0%, rgba(12,18,40,0) 100%)' }}>
 
                       {/* Animated border ring */}
-                      <div className="absolute inset-0 rounded-full border border-dashed border-[#54c8fe]/40 animate-[spin_20s_linear_infinite]"></div>
+                      <div className="absolute inset-0 rounded-full border border-dashed border-[#00EEFF]/40 animate-[spin_20s_linear_infinite]"></div>
                       <div className="absolute inset-2 rounded-full border border-solid border-[#1e293b]"></div>
 
                       {/* Profile Picture Placeholder */}
@@ -197,7 +197,7 @@ const App: React.FC = () => {
                             target.onerror = null;
                             target.style.display = 'none';
                             if (target.parentElement) {
-                              target.parentElement.innerHTML += '<div class="text-4xl text-[#54c8fe] font-bold">AS</div>';
+                              target.parentElement.innerHTML += '<div class="text-4xl text-[#00EEFF] font-bold">AS</div>';
                             }
                           }}
                         />

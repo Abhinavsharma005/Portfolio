@@ -13,13 +13,14 @@ const Contact: React.FC = () => {
                 <div className="mb-16 max-w-3xl mx-auto text-center">
                     <div className="flex justify-center mt-7 mb-9">
                         <motion.h1
-                            className='text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-600'
+                            className="text-5xl sm:text-6xl font-extrabold text-center tracking-tight flex  items-center gap-1"
                             initial={{ opacity: 0, y: -50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            Get in Touch
+                            <span className="text-[#00EEFF] mr-3">Get in</span>
+                            <span className="text-white">Touch</span>
                         </motion.h1>
                     </div>
                     <motion.p
@@ -127,7 +128,7 @@ const Contact: React.FC = () => {
                                         <FaMapMarkerAlt className="w-4 h-4" />
                                     </div>
                                     <div>
-                                        <p className="text-base text-cyan-400 font-medium mb-0.5">
+                                        <p className="text-base text-[#00EEFF] font-medium mb-0.5">
                                             Available for Remote Work
                                         </p>
                                         <p className="text-[#94A3B8] text-xs">
@@ -145,7 +146,7 @@ const Contact: React.FC = () => {
                                         <FaClock className="w-4 h-4" />
                                     </div>
                                     <div>
-                                        <p className="text-base text-cyan-400 font-medium mb-0.5">
+                                        <p className="text-base text-[#00EEFF] font-medium mb-0.5">
                                             I respond typically within 24 hours
                                         </p>
                                         <p className="text-[#94A3B8] text-xs">
