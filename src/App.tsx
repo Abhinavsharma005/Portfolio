@@ -153,7 +153,7 @@ const App: React.FC = () => {
 
                   {/* Left Column - Content */}
                   <div className="lg:w-[55%] flex flex-col items-center lg:items-start text-center lg:text-left mt-8 lg:mt-0">
-                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-2 animate-pop-up-1">Welcome, I'm</h1>
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-2 animate-pop-up-1">Hi, I'm</h1>
                     <h1 className='text-4xl sm:text-6xl md:text-7xl font-bold mb-6 animate-pop-up-2'>Abhinav Sharma
                       <span className='inline-block float-custom ml-2'>👋</span>
                     </h1>
