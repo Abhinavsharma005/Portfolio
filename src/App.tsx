@@ -81,7 +81,7 @@ const App: React.FC = () => {
       >
         <div className="flex justify-start items-center text-2xl transition duration-300 transform hover:scale-105 font-extrabold text-[#00EEFF] animate-slide-down-logo">
           <img src="/logo3.png" alt="Logo" className="w-10 h-10 mr-2"  />
-          <span className="text-[#00EEFF]">Abhinav Sharma</span>
+          <span className="text-[#00D1FE] oswald">Abhinav Sharma</span>
         </div>
 
         {/* Desktop Nav */}
